@@ -85,7 +85,29 @@ $(function () {
     //アニメーションストップ
     function stopAnimate() {
       clearInterval(menuAnimate);
-    }
+  }
+
+  function fadeVariable() {
+    $menuList.each(function() {
+      var $win = $(window),
+          $winH = $win.height(),
+          $connect = $(this),
+          position = $connect.offset().top,
+          current = 0,
+          scroll;
+      $win.on('load scroll', function () {
+        scroll = $win.scrollTop();
+        current = (1 - (position - scroll) / $winH) * 2 * 100;
+        if (current > 99.9) {
+          current = 100;
+        }
+        if (scroll > position - $winH) {
+          $connect.css({width: current + '%'});
+        }
+      });
+    });
+  }
+
 
   function init() {
     scrollTop();
@@ -93,6 +115,7 @@ $(function () {
     titeAnimate();
     setEvent();
     startAnimate();
+    fadeVariable();
   }
 
   const $menuList = $(".firstView .menu li");
@@ -104,5 +127,31 @@ $(function () {
   }
 
   init();
+
+
+  function slider() {
+
+    //変数の設定
+    const $sliderWrap = $('.works');
+    const $slider = $sliderWrap.find('.contentsWrap');
+    const $slides = $slider.find('.focus');
+    let currentIndex = 0;
+
+    //スライドアニメーション
+    function changeSlide() {
+      const duration = 1000;
+      currentIndex++;
+      $slides.animate({
+        left: (currentIndex) * -400 + "px"
+      },duration);
+    }
+    //タイマースタート
+    function startTimer() {
+      const interval = 5000;
+      timer = setInterval(changeSlide, interval);
+    }
+    startTimer();
+  }
+  slider();
 
 });

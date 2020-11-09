@@ -215,11 +215,17 @@ header .spMenu {
 }
 
 .works .contentsWrap {
-	display: flex;
-	flex-wrap: wrap;
+	/* display: flex;
 	justify-content: center;
-	align-items: center;
-	margin-top: 30px;
+	align-items: center; */
+	position: relative;
+	height: 225px;
+}
+
+.works .focus {
+	position: absolute;
+	display: flex;
+	left: 0px;
 }
 
 .works .deliverables {
@@ -233,11 +239,7 @@ header .spMenu {
 	background-size: cover;
 }
 
-.works .deliverables:nth-child(n + 3) {
-	margin-top: 20px;
-}
-
-.works .deliverables:nth-child(2n) {
+.works .deliverables + .deliverables {
 	margin-left: 20px;
 }
 /*==========works page==========*/
