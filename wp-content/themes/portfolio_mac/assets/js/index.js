@@ -35,27 +35,6 @@ $(function () {
     });
   }
 
-  function startAnimate() {
-    let y = 0.6, x = 0.6, sw = 1;
-    menuAnimate = setInterval(function(){
-      y *= sw;
-      x *= sw;
-      $menuList.animate({
-            "left": y+"px",
-            "top": x+"px"
-        },{
-            'duration': 800,
-            'easing': 'easeOutBack'
-          });
-          sw *= -1;
-        },0);
-      }
-
-    //ストップ
-    function stopAnimate() {
-      clearInterval(menuAnimate);
-    }
-
   function titeAnimate() {
     ScrollReveal().reveal('.top1', {
       duration: 1000,
@@ -87,6 +66,26 @@ $(function () {
     }
     $hamburger.on("click", toggleAction);
   }
+    //firstviewのメニューに付与するanimation関数
+    function startAnimate() {
+    let y = 0.6, sw = 1;
+    menuAnimate = setInterval(function(){
+      y *= sw;
+      // x *= sw;
+      $menuList.animate({
+            "left": y+"px",
+            // "top": x+"px"
+        },{
+            'duration': 0,
+            'easing': 'easeOutBack'
+          });
+          sw *= -1;
+        },0.1);
+      }
+    //アニメーションストップ
+    function stopAnimate() {
+      clearInterval(menuAnimate);
+    }
 
   function init() {
     scrollTop();
@@ -96,7 +95,7 @@ $(function () {
     startAnimate();
   }
 
-  const $menuList = $(".firstView li");
+  const $menuList = $(".firstView .menu li");
   function setEvent() {
     $menuList.on({
       mouseover: stopAnimate,
