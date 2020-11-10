@@ -5,30 +5,46 @@ $(function () {
   const $menuList = $(".firstView .menu li a");
   const $duplicateTxt = $(".firstView span");
 
-  function scrollTop() {
-    let flag = "view";
-    $(window).on("scroll", function () {
-      if ($(this).scrollTop() > 200) {
-        if (flag === "view") {
-          $("header").stop().css({opacity: '1.0'}).animate({
-          //”▲.header”の部分は固定ヘッダとして表示させるブロックのID名もしくはクラス名に
-          top: 0
-        }, 500);
-        flag = "hide";
+  //header適用の関数群
+  function header() {
+
+    function scrollTop() {
+      let flag = "view";
+      $(window).on("scroll", function () {
+        if ($(this).scrollTop() > 200) {
+          if (flag === "view") {
+            $("header").stop().css({opacity: '1.0'}).animate({
+            top: 0
+          }, 500);
+          flag = "hide";
+          }
+        } else {
+          if (flag === "hide") {
+            $("header").stop().animate({top:"-100px",opacity: 0}, 500);
+            flag = "view";
+          }
         }
-      } else {
-        if (flag === "hide") {
-          $("header").stop().animate({top:"-100px",opacity: 0}, 500);
-  		    //上にあがり切ったら透過度を0%にして背景が生きるように
-          //”▲.header”の部分は固定ヘッダとして表示させるブロックのID名もしくはクラス名に
-          flag = "view";
-        }
+      });
+    }
+    //ハンバーガーメニューの表示非表示
+    function toggleNav() {
+      const $hamburger = $(".hamburger");
+      const $menu = $("header").find(".menu");
+
+      function toggleAction() {
+        $hamburger.toggleClass("open");
+        $menu.toggleClass("open");
       }
-    });
-  }
+      $hamburger.on("click", toggleAction);
+    }
+    scrollTop();
+    toggleNav();
+
+  }//header適用の関数群
 
   //アニメーション フェードイン、アウト
   function titeAnimate() {
+
     ScrollReveal().reveal('.top1', {
       duration: 1000,
       origin: 'left',
@@ -62,18 +78,6 @@ $(function () {
       }
     }
     delayDisplay();
-  }
-
-  //スクロールによるメニューの表示、非表示
-  function toggleNav() {
-    const $hamburger = $(".hamburger");
-    const $menu = $("header").find(".menu");
-
-    function toggleAction() {
-      $hamburger.toggleClass("open");
-      $menu.toggleClass("open");
-    }
-    $hamburger.on("click", toggleAction);
   }
 
   //ランダムで切り替えるテキストの色の設定
@@ -129,8 +133,7 @@ $(function () {
   }
 
   function init() {
-    scrollTop();
-    toggleNav();
+    header();
     titeAnimate();
     setEvent();
     startAnimate();
