@@ -2,7 +2,7 @@ $(function () {
 // Wordpress化する際下行に変更↓↓
 // jQuery(function($){
 
-  const $menuList = $(".firstView .menu li");
+  const $menuList = $(".firstView .menu li a");
   const $duplicateTxt = $(".firstView span");
 
   function scrollTop() {
@@ -47,6 +47,21 @@ $(function () {
       scale: 0.1,
       reset: true
     });
+
+    function delayDisplay() {
+      let delayTime = 300;
+      for (let count = 1; count <= 4; count++){
+
+        ScrollReveal().reveal(`.firstView li:nth-child(${count})`, {
+          duration: 1000,
+          origin: 'right',
+          distance: '200px',
+          reset: true,
+          delay: delayTime*count
+        });
+      }
+    }
+    delayDisplay();
   }
 
   //スクロールによるメニューの表示、非表示
