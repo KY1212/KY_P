@@ -99,10 +99,12 @@ header .spMenu {
 }
 /*==========firstView==========*/
 .firstView {
-	height: calc(100vh - 170px);
+	height: calc(100vh);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	bottom: 100px;
 }
 
 .firstView .inner {
@@ -113,18 +115,22 @@ header .spMenu {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0;
 }
 
 .firstView .topWrap {
+	position: relative;
 }
 
 .firstView .top1 {
 	font-size: 17px;
+	width: 220px;
 }
 
 .firstView .top2 {
 	font-size: 25px;
-	margin-top: 25px;
+	width: 130px;
+	margin: 25px auto 0;
 }
 
 .firstView .menu {
@@ -135,6 +141,11 @@ header .spMenu {
 .firstView li {
 	position: relative;
 	text-align: left;
+}
+
+.firstView span {
+	position: absolute;
+	opacity: 0.26;
 }
 
 .firstView li:hover {
@@ -156,7 +167,9 @@ header .spMenu {
 
 /*==========about page==========*/
 .about {
-	margin-top: 60px;
+	height: calc(100vh - 100px);
+	position: relative;
+	bottom: 100px;
 }
 
 .about .inner {
@@ -203,11 +216,14 @@ header .spMenu {
 .about .skillName {
 	text-align: center;
 }
+
 /*==========about page==========*/
 
 /*==========works page==========*/
 .works {
-	margin-top: 60px;
+	height: calc(100vh - 100px);
+	position: relative;
+	bottom: 100px;
 }
 
 .works .deliverables > a {
@@ -215,9 +231,6 @@ header .spMenu {
 }
 
 .works .contentsWrap {
-	/* display: flex;
-	justify-content: center;
-	align-items: center; */
 	position: relative;
 	height: 225px;
 }
@@ -246,7 +259,9 @@ header .spMenu {
 
 /*==========contact_form page==========*/
 .contact_form {
-	margin-top: 60px;
+	height: calc(100vh - 100px);
+	position: relative;
+	bottom: 100px;
 }
 
 .contact_form {

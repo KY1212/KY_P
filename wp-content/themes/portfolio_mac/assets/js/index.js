@@ -2,19 +2,11 @@ $(function () {
 // Wordpress化する際下行に変更↓↓
 // jQuery(function($){
 
-  //   function imageJustSize() {
-  //     const mainVisual = document.getElementById('js-main-visual');
-  //     // const winH = window.innerHeight;
-  //     // mainVisual.style.height = winH + 'px';
-  //     let vh = window.innerHeight * 0.01;
-  //     // カスタム変数--vhの値をドキュメントのルートに設定
-  //     document.documentElement.style.setProperty('--vh', `${vh}px`);
-  //   }
-  // window.addEventListener('resize', imageJustSize);
+  const $menuList = $(".firstView .menu li");
+  const $duplicateTxt = $(".firstView span");
 
   function scrollTop() {
     let flag = "view";
-
     $(window).on("scroll", function () {
       if ($(this).scrollTop() > 200) {
         if (flag === "view") {
@@ -35,6 +27,7 @@ $(function () {
     });
   }
 
+  //アニメーション フェードイン、アウト
   function titeAnimate() {
     ScrollReveal().reveal('.top1', {
       duration: 1000,
@@ -56,6 +49,7 @@ $(function () {
     });
   }
 
+  //スクロールによるメニューの表示、非表示
   function toggleNav() {
     const $hamburger = $(".hamburger");
     const $menu = $("header").find(".menu");
@@ -66,59 +60,52 @@ $(function () {
     }
     $hamburger.on("click", toggleAction);
   }
-    //firstviewのメニューに付与するanimation関数
-    function startAnimate() {
-    let y = 0.6, sw = 1;
+
+  //ランダムで切り替えるテキストの色の設定
+  function getRumMyClr(){
+    const clrArr = [
+      "#b4b2b5",
+      "#dfd73f",
+      "#6ed2dc",
+      "#66cf5d",
+      "#c542cb",
+      "#d0535e",
+      "#3733c9"
+    ];
+    let setColor = clrArr[Math.floor( Math.random()*clrArr.length)];
+    return setColor;
+  }
+
+  //ランダムで要素を移動させる
+  function startAnimate() {
+    let y = 0.3, x = 0.3, sw = 1;
     menuAnimate = setInterval(function(){
-      y *= sw;
-      // x *= sw;
+      y = Math.floor( Math.random() * 10 )+1 * sw;
+      x = Math.floor( Math.random() * 10 )+1 * sw;
       $menuList.animate({
-            "left": y+"px",
-            // "top": x+"px"
-        },{
-            'duration': 0,
-            'easing': 'easeOutBack'
-          });
-          sw *= -1;
-        },0.1);
-      }
-    //アニメーションストップ
-    function stopAnimate() {
-      clearInterval(menuAnimate);
-  }
-
-  function fadeVariable() {
-    $menuList.each(function() {
-      var $win = $(window),
-          $winH = $win.height(),
-          $connect = $(this),
-          position = $connect.offset().top,
-          current = 0,
-          scroll;
-      $win.on('load scroll', function () {
-        scroll = $win.scrollTop();
-        current = (1 - (position - scroll) / $winH) * 2 * 100;
-        if (current > 99.9) {
-          current = 100;
-        }
-        if (scroll > position - $winH) {
-          $connect.css({width: current + '%'});
-        }
+        "left": 0+"px",
+        "top": 0+"px"
+      },{
+      'duration': 0,
       });
-    });
+      $duplicateTxt.animate({
+        "top": x + "px",
+        "left": y + "px",
+        'color': getRumMyClr()
+      },{
+      'duration': 0
+      });
+      $duplicateTxt.css({'color':getRumMyClr()});
+      sw *= -1;
+    },100);
   }
 
-
-  function init() {
-    scrollTop();
-    toggleNav();
-    titeAnimate();
-    setEvent();
-    startAnimate();
-    fadeVariable();
+  //アニメーションストップ
+  function stopAnimate() {
+    clearInterval(menuAnimate);
   }
 
-  const $menuList = $(".firstView .menu li");
+  //マウスイベント
   function setEvent() {
     $menuList.on({
       mouseover: stopAnimate,
@@ -126,8 +113,15 @@ $(function () {
     });
   }
 
-  init();
+  function init() {
+    scrollTop();
+    toggleNav();
+    titeAnimate();
+    setEvent();
+    startAnimate();
+  }
 
+  init();
 
   function slider() {
 
@@ -152,6 +146,6 @@ $(function () {
     }
     startTimer();
   }
-  slider();
+  // slider();
 
 });
