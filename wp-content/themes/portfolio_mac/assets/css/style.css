@@ -6,6 +6,10 @@
 	line-height: 1.8;
 }
 
+.sp {
+	display: none;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -53,7 +57,7 @@ body {
 }
 
 /*==========header==========*/
-header {
+header.pc {
 	background-color: #ffffff;
 	position: -webkit-sticky;
 	position: sticky;
@@ -61,6 +65,10 @@ header {
 	width: 100%;
 	z-index: 9999;
 	opacity: 0;
+}
+
+header.sp {
+	display: none;
 }
 
 header .inner {
@@ -92,10 +100,6 @@ header ul > li {
 
 header nav {
 	display: block;
-}
-
-header .spMenu {
-	display: none;
 }
 /*==========firstView==========*/
 .firstView {
@@ -322,7 +326,7 @@ header .spMenu {
 /*==========contact_form page==========*/
 
 /*==========1025px以上適用==========*/
-@media (min-width: 1025px) {
+@media (min-width: 767px) {
 }
 /*==========/1025px以上適用==========*/
 
@@ -336,12 +340,22 @@ header .spMenu {
 
 /*==========767px以下で適用==========*/
 @media (max-width: 767px) {
-	header .spMenu {
+	.sp {
 		display: block;
 	}
 
-	header nav {
+	header.pc {
 		display: none;
+	}
+
+	header.sp {
+		background-color: #ffffff;
+		position: -webkit-sticky;
+		position: sticky;
+		width: 100%;
+		z-index: 9999;
+		display: block;
+		top: 0;
 	}
 
 	header .hamburger {
@@ -430,6 +444,10 @@ header .spMenu {
 	header .logo {
 		width: 200px;
 		line-height: 1;
+	}
+
+	.firstView .menu {
+		display: none;
 	}
 
 	.about {

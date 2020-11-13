@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<title>YUSUKE KATO's Portfolio</title>
+		<link rel="stylesheet" href="./assets/css/reset.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<script src="./assets/js/vendor/jquery-1.10.2.min.js"></script>
+		<script src="./assets/js/vendor/easing.js"></script>
+		<script src="./assets/js/index.js"></script>
+		<link
+			href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+			rel="stylesheet"
+		/>
+		<script src="https://unpkg.com/scrollreveal"></script>
+	</head>
+	<body>
+		<header class="pc">
+			<div class="inner">
+				<h1>
+					<a href="#"> Nam </a>
+				</h1>
+				<nav>
+					<ul class="list">
+						<li><a href="./about.html">ABOUT</a></li>
+						<li><a href="./works.html">WORKS</a></li>
+						<li><a href="./contact.html">CONTACT</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<header class="sp">
+			<div class="inner">
+				<h1>
+					<a href="#"> Nam </a>
+				</h1>
+				<div class="spMenu">
+					<div class="hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="contact_form">
+				<div class="heading">
+					<h2>Contact</h2>
+				</div>
+				<div class="contentsWrap">
+					<form>
+						<div class="item">
+							<div class="label">お名前<span>(必須)</span></div>
+							<input class="inputs" type="text" name="name" />
+						</div>
+						<div class="item">
+							<div class="label">メールアドレス<span>(必須)</span></div>
+							<input class="inputs" type="email" name="email" />
+						</div>
+						<div class="item">
+							<div class="label">お問い合わせ内容<span>(必須)</span></div>
+							<textarea class="inputs"></textarea>
+						</div>
+						<div class="submit">
+							<input
+								type="submit"
+								formaction="contact_comfirm.html"
+								value="確認"
+								class="btn"
+							/>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

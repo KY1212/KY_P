@@ -6,30 +6,30 @@ $(function () {
   const $duplicateTxt = $(".firstView span");
 
   //header適用の関数群
-  function header() {
 
-    function scrollTop() {
-      let flag = "view";
-      $(window).on("scroll", function () {
-        if ($(this).scrollTop() > 200) {
-          if (flag === "view") {
-            $("header").stop().css({opacity: '1.0'}).animate({
-            top: 0
-          }, 500);
-          flag = "hide";
-          }
+  function scrollTop() {
+    let flag = "view";
+    $(window).on("scroll", function () {
+      if ($(this).scrollTop() > 200) {
+        if (flag === "view") {
+          $("header.pc").stop().css({ opacity: '1.0' }).animate({
+              top: 0
+            }, 500);
+            flag = "hide";
+            }
         } else {
           if (flag === "hide") {
-            $("header").stop().animate({top:"-100px",opacity: 0}, 500);
+            $("header.pc").stop().animate({ top: "-100px", opacity: 0 }, 500);
             flag = "view";
           }
         }
       });
-    }
+  }
+
     //ハンバーガーメニューの表示非表示
     function toggleNav() {
       const $hamburger = $(".hamburger");
-      const $menu = $("header").find(".menu");
+      const $menu = $("header.sp").find(".menu");
 
       function toggleAction() {
         $hamburger.toggleClass("open");
@@ -37,10 +37,7 @@ $(function () {
       }
       $hamburger.on("click", toggleAction);
     }
-    scrollTop();
-    toggleNav();
 
-  }//header適用の関数群
 
   //アニメーション フェードイン、アウト
   function titeAnimate() {
@@ -57,7 +54,13 @@ $(function () {
       distance: '250px',
       reset: true
     });
-    ScrollReveal().reveal('.skill', {
+    ScrollReveal().reveal('.about', {
+      duration: 1000,
+      distance: '250px',
+      scale: 0.1,
+      reset: true
+    });
+    ScrollReveal().reveal('.works', {
       duration: 1000,
       distance: '250px',
       scale: 0.1,
@@ -133,10 +136,15 @@ $(function () {
   }
 
   function init() {
-    header();
     titeAnimate();
     setEvent();
     startAnimate();
+
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      scrollTop();
+    } else if (window.matchMedia('(max-width: 767px)').matches) {
+      toggleNav();
+    }
   }
 
   init();
