@@ -24,7 +24,7 @@ section span {
 	justify-content: center;
 }
 
-スクロールで各セクションごときりかわるようにする
+/* スクロールで各セクションごときりかわるようにする */
 
 img {
 	width: 100%;
