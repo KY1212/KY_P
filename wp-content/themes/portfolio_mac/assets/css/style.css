@@ -10,6 +10,10 @@
 	display: none;
 }
 
+.pc {
+	display: block;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -62,18 +66,7 @@ body {
 	margin-top: 50px;
 }
 
-.spNone {
-	display: block;
-}
-
-.pcNone {
-	display: none;
-}
-
 /*==========header==========*/
-header.sp {
-	display: none;
-}
 
 header .inner {
 	display: flex;
@@ -87,23 +80,31 @@ header h1 > a {
 	font-size: 25px;
 }
 
-header .list {
+header .pc .list {
 	display: flex;
 	font-size: 18px;
 }
 
-header .list li + li {
+header .pc .list li + li {
 	display: flex;
 	align-items: center;
 	margin-left: 20px;
 }
 
-header ul > li {
+header .pc ul > li {
 	font-size: 20px;
 }
 
-header nav {
-	display: block;
+header .sp .list {
+	background-color: #cccccc;
+	height: 100vh;
+	width: calc(100vw - 30px);
+	position: absolute;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 /*==========firstView==========*/
 .firstView {
@@ -345,10 +346,16 @@ footer p {
 }
 /*==========footer page==========*/
 
-/*==========1025px以上適用==========*/
+/*==========767px以上適用==========*/
 @media (min-width: 767px) {
+	header .spMenu {
+		display: none;
+	}
+	header nav {
+		display: block;
+	}
 }
-/*==========/1025px以上適用==========*/
+/*==========/767px以上適用==========*/
 
 /*==========1024px以下で適用==========*/
 @media (max-width: 1024px) and (min-width: 425px) {
@@ -360,19 +367,27 @@ footer p {
 
 /*==========767px以下で適用==========*/
 @media (max-width: 767px) {
-	.firstView {
-		bottom: 100px;
+	.pc {
+		display: none;
 	}
 
 	.sp {
 		display: block;
 	}
 
-	header.pc {
+	header .spMenu {
+		display: flex;
+	}
+
+	header nav {
 		display: none;
 	}
 
-	header.sp {
+	.firstView {
+		bottom: 100px;
+	}
+
+	header {
 		background-color: #ffffff;
 		position: -webkit-sticky;
 		position: sticky;

@@ -9,7 +9,7 @@ $(function () {
     //ハンバーガーメニューの表示非表示
     function toggleNav() {
       const $hamburger = $(".hamburger");
-      const $menu = $("header.sp").find(".menu");
+      const $menu = $("header").find(".menu");
 
       function toggleAction() {
         $hamburger.toggleClass("open");
