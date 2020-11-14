@@ -19,7 +19,7 @@
 		<script src="https://unpkg.com/scrollreveal"></script>
 	</head>
 	<body>
-		<header class="pc">
+		<!-- <header class="pc">
 			<div class="inner">
 				<h1>
 					<a href="#"> Nam </a>
@@ -32,7 +32,7 @@
 					</ul>
 				</nav>
 			</div>
-		</header>
+		</header> -->
 		<header class="sp">
 			<div class="inner">
 				<h1>
@@ -76,40 +76,68 @@
 			<div class="sp">
 				<section class="about">
 					<div class="inner">
-						<div class="heading">
-							<h2>about</h2>
-						</div>
+						<h2 class="heading">
+							Works<span>Works</span>
+						</h2>
 						<div class="contentsWrap">
 							<div class="introduce">
 								<img src="./assets/img/nakamura8.jpg" alt="" />
 							</div>
 							<div class="details">
-								<div class="profile">
-									<p>加藤優介</p>
-									<p>2歳</p>
-									<p>
-										今年の6月からWeb制作の学習を始めました。<br />
-										まだ経験不足なので日々勉強に励んでいます。<br />
-									</p>
+								<div class="contentsWrap column">
+										<h2 class="heading">
+											Profile
+										</h2>
+									<div class="profile">
+										<p>加藤優介</p>
+										<p>2歳</p>
+										<p>
+											今年の6月からWeb制作の学習を始めました。<br />
+											まだ経験不足なので日々勉強に励んでいます。<br />
+										</p>
+									</div>
 								</div>
-								<div class="skillWrap">
-									<div class="skill">
-										<p class="skillImage">
-											<img src="./assets/img/nakamura1.jpg" alt="WordPress" />
-										</p>
-										<p class="skillName">HTML,CSS</p>
-									</div>
-									<div class="skill">
-										<p class="skillImage">
-											<img src="./assets/img/nakamura1.jpg" alt="WordPress" />
-										</p>
-										<p class="skillName">jQuery</p>
-									</div>
-									<div class="skill">
-										<p class="skillImage">
-											<img src="./assets/img/nakamura1.jpg" alt="WordPress" />
-										</p>
-										<p class="skillName">WordPress</p>
+								<div class="contentsWrap column">
+										<h2 class="heading">
+											Skill
+										</h2>
+									<div class="skillWrap">
+										<div class="skill">
+											<p class="skillImage">
+												<img src="./assets/img/html.png" alt="WordPress" />
+											</p>
+											<p class="skillName">★★★★☆</p>
+										</div>
+										<div class="skill">
+											<p class="skillImage">
+												<img src="./assets/img/css.png" alt="WordPress" />
+											</p>
+											<p class="skillName">★★★★☆</p>
+										</div>
+										<div class="skill">
+											<p class="skillImage">
+												<img src="./assets/img/jquery.png" alt="WordPress" />
+											</p>
+											<p class="skillName">★★★★☆</p>
+										</div>
+										<div class="skill">
+											<p class="skillImage">
+												<img src="./assets/img/wordpress.png" alt="WordPress" />
+											</p>
+											<p class="skillName">★★★☆☆</p>
+										</div>
+										<!-- <div class="skill">
+											<p class="skillImage">
+												<img src="./assets/img/vue.png" alt="WordPress" />
+											</p>
+											<p class="skillName">Vue.js</p>
+										</div>
+										<div class="skill">
+											<p class="skillImage">
+												<img src="./assets/img/rails.png" alt="WordPress" />
+											</p>
+											<p class="skillName">Rails</p>
+										</div> -->
 									</div>
 								</div>
 							</div>
@@ -118,9 +146,9 @@
 				</section>
 				<section class="works">
 					<div class="inner">
-						<div class="heading">
-							<h2>Works</h2>
-						</div>
+						<h2 class="heading">
+								Works<span>Works</span>
+						</h2>
 						<div class="contentsWrap">
 							<div class="focus">
 								<div class="deliverables">
@@ -148,32 +176,34 @@
 					</div>
 				</section>
 				<section class="contact_form">
-					<div class="heading">
-						<h2>Contact</h2>
-					</div>
-					<div class="contentsWrap">
-						<form>
-							<div class="item">
-								<div class="label">お名前<span>(必須)</span></div>
-								<input class="inputs" type="text" name="name" />
-							</div>
-							<div class="item">
-								<div class="label">メールアドレス<span>(必須)</span></div>
-								<input class="inputs" type="email" name="email" />
-							</div>
-							<div class="item">
-								<div class="label">お問い合わせ内容<span>(必須)</span></div>
-								<textarea class="inputs"></textarea>
-							</div>
-							<div class="submit">
-								<input
-									type="submit"
-									formaction="contact_comfirm.html"
-									value="確認"
-									class="btn"
-								/>
-							</div>
-						</form>
+					<div class="inner">
+						<h2 class="heading">
+							Contact<span>Contact</span>
+						</h2>
+						<div class="contentsWrap">
+							<form>
+								<div class="item">
+									<div class="label">お名前<span>(必須)</span></div>
+									<input class="inputs" type="text" name="name" />
+								</div>
+								<div class="item">
+									<div class="label">メールアドレス<span>(必須)</span></div>
+									<input class="inputs" type="email" name="email" />
+								</div>
+								<div class="item">
+									<div class="label">お問い合わせ内容<span>(必須)</span></div>
+									<textarea class="inputs"></textarea>
+								</div>
+								<div class="submit">
+									<input
+										type="submit"
+										formaction="contact_comfirm.html"
+										value="確認"
+										class="btn"
+									/>
+								</div>
+							</form>
+						</div>
 					</div>
 				</section>
 			</div>

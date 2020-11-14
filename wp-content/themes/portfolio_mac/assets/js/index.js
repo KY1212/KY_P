@@ -4,27 +4,7 @@ $(function () {
 
   const $menuList = $(".firstView .menu li a");
   const $duplicateTxt = $(".firstView span");
-
-  //header適用の関数群
-
-  function scrollTop() {
-    let flag = "view";
-    $(window).on("scroll", function () {
-      if ($(this).scrollTop() > 200) {
-        if (flag === "view") {
-          $("header.pc").stop().css({ opacity: '1.0' }).animate({
-              top: 0
-            }, 500);
-            flag = "hide";
-            }
-        } else {
-          if (flag === "hide") {
-            $("header.pc").stop().animate({ top: "-100px", opacity: 0 }, 500);
-            flag = "view";
-          }
-        }
-      });
-  }
+  const $heading = $(".heading span");
 
     //ハンバーガーメニューの表示非表示
     function toggleNav() {
@@ -37,7 +17,6 @@ $(function () {
       }
       $hamburger.on("click", toggleAction);
     }
-
 
   //アニメーション フェードイン、アウト
   function titeAnimate() {
@@ -70,7 +49,6 @@ $(function () {
     function delayDisplay() {
       let delayTime = 300;
       for (let count = 1; count <= 4; count++){
-
         ScrollReveal().reveal(`.firstView li:nth-child(${count})`, {
           duration: 1000,
           origin: 'right',
@@ -104,20 +82,15 @@ $(function () {
     menuAnimate = setInterval(function(){
       y = Math.floor( Math.random() * 10 )+1 * sw;
       x = Math.floor( Math.random() * 10 )+1 * sw;
-      $menuList.animate({
-        "left": 0+"px",
-        "top": 0+"px"
-      },{
-      'duration': 0,
-      });
-      $duplicateTxt.animate({
+
+      $duplicateTxt.add($heading).animate({
         "top": x + "px",
         "left": y + "px",
         'color': getRumMyClr()
       },{
       'duration': 0
       });
-      $duplicateTxt.css({'color':getRumMyClr()});
+      $duplicateTxt.add($heading).css({'color':getRumMyClr()});
       sw *= -1;
     },100);
   }
@@ -139,39 +112,7 @@ $(function () {
     titeAnimate();
     setEvent();
     startAnimate();
-
-    if (window.matchMedia('(min-width: 768px)').matches) {
-      scrollTop();
-    } else if (window.matchMedia('(max-width: 767px)').matches) {
-      toggleNav();
-    }
+    toggleNav();
   }
-
   init();
-
-  function slider() {
-
-    //変数の設定
-    const $sliderWrap = $('.works');
-    const $slider = $sliderWrap.find('.contentsWrap');
-    const $slides = $slider.find('.focus');
-    let currentIndex = 0;
-
-    //スライドアニメーション
-    function changeSlide() {
-      const duration = 1000;
-      currentIndex++;
-      $slides.animate({
-        left: (currentIndex) * -400 + "px"
-      },duration);
-    }
-    //タイマースタート
-    function startTimer() {
-      const interval = 5000;
-      timer = setInterval(changeSlide, interval);
-    }
-    startTimer();
-  }
-  // slider();
-
 });

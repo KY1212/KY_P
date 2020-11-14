@@ -15,6 +15,17 @@ a {
 	color: inherit;
 }
 
+section {
+	margin-top: 30px;
+}
+
+section span {
+	display: flex;
+	justify-content: center;
+}
+
+スクロールで各セクションごときりかわるようにする
+
 img {
 	width: 100%;
 	height: auto;
@@ -37,11 +48,14 @@ body {
 
 .heading {
 	text-align: center;
+	font-size: 45px;
+	font-weight: normal;
+	position: relative;
 }
 
-.heading h2 {
-	font-size: 25px;
-	font-weight: normal;
+.heading span {
+	position: absolute;
+	opacity: 0.26;
 }
 
 .contentsWrap {
@@ -57,15 +71,6 @@ body {
 }
 
 /*==========header==========*/
-header.pc {
-	background-color: #ffffff;
-	position: -webkit-sticky;
-	position: sticky;
-	top: -100px;
-	width: 100%;
-	z-index: 9999;
-	opacity: 0;
-}
 
 header.sp {
 	display: none;
@@ -107,12 +112,7 @@ header nav {
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	bottom: 100px;
 	height: 100vh;
-}
-
-.firstView .inner {
-	text-align: center;
 }
 
 .firstView .contentsWrap {
@@ -171,22 +171,26 @@ header nav {
 /*==========./firstView==========*/
 
 /*==========about page==========*/
-.about {
-	position: relative;
-	bottom: 100px;
-}
-
-.about .inner {
+section .heading {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 }
 
 .about .contentsWrap {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.about .contentsWrap.column {
+	flex-direction: column;
+}
+
+.about .details .contentsWrap:nth-child(n+2){
+	margin-top: 30px;
+}
+
+.about .contentsWrap .heading {
+	font-size: 30px;
 }
 
 .about .details {
@@ -205,13 +209,20 @@ header nav {
 }
 
 .about .skillWrap {
-	margin-top: 30px;
+	margin-top: 10px;
 	display: flex;
+	width: 400px;
+	flex-wrap: wrap;
 }
 
-.about .skill + .skill {
-	margin-left: 30px;
+
+/* .about .skill:nth-child(n+3) {
+	margin-top: 10px;
 }
+
+.about .skill:nth-child(2n) {
+	margin-left: 30px;
+} */
 
 .about .skillImage {
 	width: 100px;
@@ -220,14 +231,10 @@ header nav {
 .about .skillName {
 	text-align: center;
 }
-
 /*==========about page==========*/
 
 /*==========works page==========*/
-.works {
-	position: relative;
-	bottom: 100px;
-}
+
 
 .works .deliverables > a {
 	display: block;
@@ -261,15 +268,7 @@ header nav {
 /*==========works page==========*/
 
 /*==========contact_form page==========*/
-.contact_form {
-	position: relative;
-	bottom: 100px;
-}
 
-.contact_form {
-	margin: 60px auto 0;
-	width: 96%;
-}
 
 .contact_form .contents {
 	margin: 40px auto 0;
@@ -322,7 +321,6 @@ header nav {
 	color: #ffffff;
 	margin: auto;
 }
-
 /*==========contact_form page==========*/
 
 /*==========1025px以上適用==========*/
@@ -332,6 +330,7 @@ header nav {
 
 /*==========1024px以下で適用==========*/
 @media (max-width: 1024px) and (min-width: 425px) {
+
 	.works .deliverables {
 		width: calc(50% - 15px);
 	}
@@ -340,6 +339,11 @@ header nav {
 
 /*==========767px以下で適用==========*/
 @media (max-width: 767px) {
+
+	.firstView {
+		bottom: 100px;
+	}
+	
 	.sp {
 		display: block;
 	}
@@ -462,23 +466,10 @@ header nav {
 		flex-direction: column;
 	}
 
-	.about .skillWrap {
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.about .skill + .skill {
-		margin: 20px 0 0 0;
-	}
-
-	.about .skillImage {
-		width: 100%;
-	}
-
 	.about .details {
 		margin: 0;
 	}
+
 	.about .introduce .introduce {
 		max-width: 375px;
 		width: 96%;
