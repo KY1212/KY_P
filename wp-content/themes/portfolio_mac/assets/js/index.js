@@ -5,6 +5,7 @@ $(function () {
   const $menuList = $(".firstView .menu li a");
   const $duplicateTxt = $(".firstView span");
   const $heading = $(".heading span");
+  const $spMenu = $("header .sp .list")
 
     //ハンバーガーメニューの表示非表示
     function toggleNav() {
@@ -14,6 +15,7 @@ $(function () {
       function toggleAction() {
         $hamburger.toggleClass("open");
         $menu.toggleClass("open");
+        $spMenu.toggleClass("open");
       }
       $hamburger.on("click", toggleAction);
     }
@@ -99,6 +101,8 @@ $(function () {
   function stopAnimate() {
     clearInterval(menuAnimate);
   }
+
+
 
   //マウスイベント
   function setEvent() {

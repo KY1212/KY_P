@@ -98,13 +98,21 @@ header .pc ul > li {
 header .sp .list {
 	background-color: #cccccc;
 	height: 100vh;
-	width: calc(100vw - 30px);
+	width: 100vw;
 	position: absolute;
 	font-size: 30px;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	left: 700px;
+	top: 100px;
+	transition: all 3s;
+}
+
+header .sp .list.open {
+	display: flex;
+	left: 0;
 }
 /*==========firstView==========*/
 .firstView {
