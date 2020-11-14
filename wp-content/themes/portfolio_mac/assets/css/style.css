@@ -71,7 +71,6 @@ body {
 }
 
 /*==========header==========*/
-
 header.sp {
 	display: none;
 }
@@ -171,8 +170,10 @@ header nav {
 /*==========./firstView==========*/
 
 /*==========about page==========*/
-section .heading {
+.inner > .heading {
 	display: flex;
+	width: 137px;
+	margin: auto;
 }
 
 .about .contentsWrap {
@@ -185,7 +186,7 @@ section .heading {
 	flex-direction: column;
 }
 
-.about .details .contentsWrap:nth-child(n+2){
+.about .details .contentsWrap:nth-child(n + 2) {
 	margin-top: 30px;
 }
 
@@ -215,7 +216,6 @@ section .heading {
 	flex-wrap: wrap;
 }
 
-
 /* .about .skill:nth-child(n+3) {
 	margin-top: 10px;
 }
@@ -234,7 +234,6 @@ section .heading {
 /*==========about page==========*/
 
 /*==========works page==========*/
-
 
 .works .deliverables > a {
 	display: block;
@@ -268,7 +267,6 @@ section .heading {
 /*==========works page==========*/
 
 /*==========contact_form page==========*/
-
 
 .contact_form .contents {
 	margin: 40px auto 0;
@@ -323,6 +321,30 @@ section .heading {
 }
 /*==========contact_form page==========*/
 
+/*==========footer page==========*/
+footer {
+	height: 100px;
+	background-color: #a9a9a9;
+	color: #fff;
+	text-align: center;
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+}
+
+footer .inner {
+	margin: auto;
+}
+
+footer .contentsWrap {
+	margin: 0;
+}
+
+footer p {
+	font-size: 20px;
+}
+/*==========footer page==========*/
+
 /*==========1025px以上適用==========*/
 @media (min-width: 767px) {
 }
@@ -330,7 +352,6 @@ section .heading {
 
 /*==========1024px以下で適用==========*/
 @media (max-width: 1024px) and (min-width: 425px) {
-
 	.works .deliverables {
 		width: calc(50% - 15px);
 	}
@@ -339,11 +360,10 @@ section .heading {
 
 /*==========767px以下で適用==========*/
 @media (max-width: 767px) {
-
 	.firstView {
 		bottom: 100px;
 	}
-	
+
 	.sp {
 		display: block;
 	}
