@@ -6,35 +6,53 @@ $(function () {
   const $duplicateTxt = $(".firstView span");
   const $heading = $(".heading span");
   const $hamburger = $(".hamburger");
-  const $spMenu = $("header .sp .list")
+  const $hamburgerLine = $hamburger.find("span");
+  const $spMenu = $("header .sp .list");
+  const $spMenuTxt = $("header .sp .list span");
 
     //ハンバーガーメニューの表示非表示
     function toggleNav() {
       function toggleAction() {
+        const duration = 300;
         $hamburger.toggleClass("open");
         //開くアクション
         if($hamburger.hasClass("open")) {
-          $spMenu.toggleClass("open").animate({
+          //SPメニューのアニメーションと色の変更
+          $spMenu.animate({
+            top: 0
+          }, 0);
+          $spMenu.animate({
             opacity: 1
-          }, 300).css({
-            background: "rgba(25, 255, 255, 0.5)"
-          },300);
-          //sectionを非表示
-          $("section,footer").css({
-            display: "none"
-          });
+          }, duration).css({
+            background: "rgba(108, 108, 108, 0.9)",
+            display: "flex"
+          }, duration);
+          //hamburgerのライン色を変更
+          $hamburgerLine.css({
+            background: "#fff"
+          },duration);
+          //メインコンテンツを若干透過させる
+          $("section, footer").css({
+            opacity: "0.5"
+          }, duration);
+
         //閉じるアクション
         } else if (!($hamburger).hasClass("open")) {
+          //SPメニューのアニメーションと色の変更
           $spMenu.animate({
             opacity: 0
-          }, 300).css({
-            background: "rgba(25, 255, 255, 0)",
-            display: "flex"
-          },300);
-          //sectionを非表示
+          }, duration);
+          $spMenu.animate({
+            top: -700
+          }, 0);
+          //hamburgerのライン色を変更
+          $hamburgerLine.css({
+            background: "#333"
+          }, duration);
+          //メインコンテンツの透過を解除
           $("section,footer").css({
-            display: "flex"
-          });
+            opacity: "1"
+          }, duration);
         }
       }
       $hamburger.on("click", toggleAction);
@@ -105,14 +123,14 @@ $(function () {
       y = Math.floor( Math.random() * 10 )+1 * sw;
       x = Math.floor( Math.random() * 10 )+1 * sw;
 
-      $duplicateTxt.add($heading).animate({
+      $duplicateTxt.add($spMenuTxt).add($heading).animate({
         "top": x + "px",
         "left": y + "px",
         'color': getRumMyClr()
       },{
       'duration': 0
       });
-      $duplicateTxt.add($heading).css({'color':getRumMyClr()});
+      $duplicateTxt.add($spMenuTxt).add($heading).css({'color':getRumMyClr()});
       sw *= -1;
     },100);
   }
@@ -121,8 +139,6 @@ $(function () {
   function stopAnimate() {
     clearInterval(menuAnimate);
   }
-
-
 
   //マウスイベント
   function setEvent() {

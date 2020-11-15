@@ -98,7 +98,6 @@ header .pc ul > li {
 }
 
 header .sp .list {
-	background-color: none;
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
@@ -109,15 +108,17 @@ header .sp .list {
 	flex-direction: column;
 	left: 0px;
 	opacity: 0;
-	top: 100px;
+	top: 0;
+	color: #fff;
 }
 
-header .sp .list.open {
-	display: flex;
+header .sp .list li {
+	position: relative;
 }
 
-.bg-mask {
-	background: rgba(25, 255, 255, 0.5);
+header .sp .list li span {
+	position: absolute;
+	opacity: 0.46;
 }
 /*==========firstView==========*/
 .firstView {
@@ -194,22 +195,22 @@ header .sp .list.open {
 	align-items: center;
 }
 
-.about .contentsWrap.column {
-	flex-direction: column;
-}
-
-.about .details .contentsWrap:nth-child(n + 2) {
-	margin-top: 30px;
-}
-
-.about .contentsWrap .heading {
-	font-size: 30px;
-}
-
-.about .details {
+.about .detailsWrap {
 	display: flex;
 	flex-direction: column;
 	margin-left: 40px;
+}
+
+.about .details {
+	flex-direction: column;
+}
+
+.about .details:nth-child(n + 2) {
+	margin-top: 30px;
+}
+
+.about .details .heading {
+	font-size: 30px;
 }
 
 .about .introduce img {
@@ -227,14 +228,6 @@ header .sp .list.open {
 	width: 400px;
 	flex-wrap: wrap;
 }
-
-/* .about .skill:nth-child(n+3) {
-	margin-top: 10px;
-}
-
-.about .skill:nth-child(2n) {
-	margin-left: 30px;
-} */
 
 .about .skillImage {
 	width: 100px;
@@ -386,16 +379,16 @@ footer p {
 		display: block;
 	}
 
+	section {
+		margin: 0;
+	}
+
 	header .spMenu {
 		display: flex;
 	}
 
 	header nav {
 		display: none;
-	}
-
-	.firstView {
-		bottom: 100px;
 	}
 
 	header {
@@ -450,50 +443,17 @@ footer p {
 		transform: translateY(-15px) rotate(45deg);
 	}
 
-	header .menu {
-		display: flex;
-		background-color: #f9f9f9;
-		width: 250px;
-		height: 100%;
-		position: fixed;
-		right: -250px;
-		top: 0;
-		transition-duration: 0.5s;
-	}
-
-	header .menu.open {
-		right: 0;
-		transition-duration: 0.5s;
-	}
-
-	header .menu ul {
-		padding: 50px 0 0;
-	}
-
-	header .menu li {
-		margin-left: 20px;
-		padding-left: 10px;
-		position: relative;
-	}
-
-	header .menu li::after {
-		content: "";
-		display: block;
-		width: 200px;
-		height: 1px;
-		background-color: #cccccc;
-		position: absolute;
-		bottom: -10px;
-		left: 0;
-	}
-
-	header .menu li + li {
-		margin-top: 20px;
-	}
-
 	header .logo {
 		width: 200px;
 		line-height: 1;
+	}
+
+	header .sp .list li + li {
+		margin-top: 30px;
+	}
+
+	.firstView {
+		bottom: 100px;
 	}
 
 	.firstView .menu {
@@ -512,7 +472,7 @@ footer p {
 		flex-direction: column;
 	}
 
-	.about .details {
+	.about .detailsWrap {
 		margin: 0;
 	}
 
