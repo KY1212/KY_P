@@ -98,7 +98,7 @@ header .pc ul > li {
 }
 
 header .sp .list {
-	background-color: #cccccc;
+	background-color: none;
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
@@ -114,6 +114,10 @@ header .sp .list {
 
 header .sp .list.open {
 	display: flex;
+}
+
+.bg-mask {
+	background: rgba(25, 255, 255, 0.5);
 }
 /*==========firstView==========*/
 .firstView {

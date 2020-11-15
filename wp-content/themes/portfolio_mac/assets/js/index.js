@@ -10,28 +10,32 @@ $(function () {
 
     //ハンバーガーメニューの表示非表示
     function toggleNav() {
-      // const $menu = $("header").find(".menu");
-
       function toggleAction() {
         $hamburger.toggleClass("open");
+        //開くアクション
         if($hamburger.hasClass("open")) {
           $spMenu.toggleClass("open").animate({
-            opacity: .4
-          }, 300);
+            opacity: 1
+          }, 300).css({
+            background: "rgba(25, 255, 255, 0.5)"
+          },300);
+          //sectionを非表示
           $("section,footer").css({
             display: "none"
           });
+        //閉じるアクション
         } else if (!($hamburger).hasClass("open")) {
           $spMenu.animate({
             opacity: 0
           }, 300).css({
+            background: "rgba(25, 255, 255, 0)",
             display: "flex"
-          });
+          },300);
+          //sectionを非表示
           $("section,footer").css({
             display: "flex"
           });
         }
-
       }
       $hamburger.on("click", toggleAction);
     }
