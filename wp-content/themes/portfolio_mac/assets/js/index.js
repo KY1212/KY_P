@@ -5,17 +5,33 @@ $(function () {
   const $menuList = $(".firstView .menu li a");
   const $duplicateTxt = $(".firstView span");
   const $heading = $(".heading span");
+  const $hamburger = $(".hamburger");
   const $spMenu = $("header .sp .list")
 
     //ハンバーガーメニューの表示非表示
     function toggleNav() {
-      const $hamburger = $(".hamburger");
-      const $menu = $("header").find(".menu");
+      // const $menu = $("header").find(".menu");
 
       function toggleAction() {
         $hamburger.toggleClass("open");
-        $menu.toggleClass("open");
-        $spMenu.toggleClass("open");
+        if($hamburger.hasClass("open")) {
+          $spMenu.toggleClass("open").animate({
+            opacity: .4
+          }, 300);
+          $("section,footer").css({
+            display: "none"
+          });
+        } else if (!($hamburger).hasClass("open")) {
+          $spMenu.animate({
+            opacity: 0
+          }, 300).css({
+            display: "flex"
+          });
+          $("section,footer").css({
+            display: "flex"
+          });
+        }
+
       }
       $hamburger.on("click", toggleAction);
     }

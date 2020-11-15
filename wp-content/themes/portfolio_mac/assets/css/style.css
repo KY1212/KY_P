@@ -23,7 +23,7 @@ section {
 	margin-top: 30px;
 }
 
-section span {
+section h2 > span {
 	display: flex;
 	justify-content: center;
 }
@@ -50,6 +50,14 @@ body {
 	margin: auto;
 }
 
+.contentsWrap {
+	margin-top: 50px;
+}
+
+.displayNone {
+	display: none;
+}
+/*==========header==========*/
 .heading {
 	text-align: center;
 	font-size: 45px;
@@ -61,12 +69,6 @@ body {
 	position: absolute;
 	opacity: 0.26;
 }
-
-.contentsWrap {
-	margin-top: 50px;
-}
-
-/*==========header==========*/
 
 header .inner {
 	display: flex;
@@ -105,20 +107,17 @@ header .sp .list {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	left: 700px;
+	left: 0px;
+	opacity: 0;
 	top: 100px;
-	transition: all 3s;
 }
 
 header .sp .list.open {
 	display: flex;
-	left: 0;
 }
 /*==========firstView==========*/
 .firstView {
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: relative;
 	height: 100vh;
 }
