@@ -57,7 +57,6 @@ body {
 .displayNone {
 	display: none;
 }
-/*==========header==========*/
 .heading {
 	text-align: center;
 	font-size: 45px;
@@ -69,7 +68,7 @@ body {
 	position: absolute;
 	opacity: 0.26;
 }
-
+/*==========header==========*/
 header .inner {
 	display: flex;
 	justify-content: space-between;
@@ -185,8 +184,19 @@ header .sp .list li span {
 /*==========about page==========*/
 .inner > .heading {
 	display: flex;
-	width: 137px;
+	justify-content: center;
 	margin: auto;
+}
+
+.about .heading {
+	width: 166px;
+	margin: auto;
+}
+.works .heading {
+	width: 143px;
+}
+.contact_form .heading {
+	width: 178px;
 }
 
 .about .contentsWrap {
@@ -225,7 +235,9 @@ header .sp .list li span {
 .about .skillWrap {
 	margin-top: 10px;
 	display: flex;
-	width: 400px;
+	justify-content: center;
+	max-width: 400px;
+	width: 100%;
 	flex-wrap: wrap;
 }
 
@@ -246,17 +258,12 @@ header .sp .list li span {
 
 .works .contentsWrap {
 	position: relative;
-	height: 225px;
-}
-
-.works .focus {
-	position: absolute;
 	display: flex;
-	left: 0px;
+	flex-wrap: wrap;
 }
 
 .works .deliverables {
-	width: 400px;
+	width: calc(50% - 15px);
 }
 
 .works .deliverables .image {
@@ -266,8 +273,12 @@ header .sp .list li span {
 	background-size: cover;
 }
 
-.works .deliverables + .deliverables {
+.works .deliverables:nth-child(2n) {
 	margin-left: 20px;
+}
+
+.works .deliverables:nth-child(n + 3) {
+	margin-top: 20px;
 }
 /*==========works page==========*/
 
@@ -380,7 +391,7 @@ footer p {
 	}
 
 	section {
-		margin: 0;
+		margin-top: 70px;
 	}
 
 	header .spMenu {
@@ -392,7 +403,7 @@ footer p {
 	}
 
 	header {
-		background-color: #ffffff;
+		background-color: #eeeeee;
 		position: -webkit-sticky;
 		position: sticky;
 		width: 100%;
