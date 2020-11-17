@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 /*==========global==========*/
+
 * {
 	box-sizing: border-box;
 	line-height: 1.8;
@@ -19,8 +20,13 @@ a {
 	color: inherit;
 }
 
-section {
-	margin-top: 30px;
+main {
+	margin-top: 100px;
+	flex: 1;
+}
+
+.index {
+	margin: 0;
 }
 
 section h2 > span {
@@ -42,10 +48,13 @@ body {
 	text-size-adjust: 100%;
 	font-size: 14px;
 	font-family: "Roboto", sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column;
 }
 
 .inner {
-	width: 96%;
+	width: 94%;
 	max-width: 1240px;
 	margin: auto;
 }
@@ -57,18 +66,24 @@ body {
 .displayNone {
 	display: none;
 }
-.heading {
+h2.heading {
 	text-align: center;
 	font-size: 45px;
 	font-weight: normal;
 	position: relative;
+	line-height: 1;
 }
 
-.heading span {
+h2.heading span {
 	position: absolute;
 	opacity: 0.26;
+	line-height: 1;
 }
 /*==========header==========*/
+header {
+	background-color: #eee;
+}
+
 header .inner {
 	display: flex;
 	justify-content: space-between;
@@ -188,14 +203,20 @@ header .sp .list li span {
 	margin: auto;
 }
 
-.about .heading {
-	width: 166px;
+.about h2.heading {
+	width: 137px;
 	margin: auto;
 }
-.works .heading {
+
+.about h3.heading {
+	font-size: 25px;
+	font-weight: normal;
+}
+
+.works h2.heading {
 	width: 143px;
 }
-.contact_form .heading {
+.contact_form h2.heading {
 	width: 178px;
 }
 
@@ -219,12 +240,8 @@ header .sp .list li span {
 	margin-top: 30px;
 }
 
-.about .details .heading {
-	font-size: 30px;
-}
-
 .about .introduce img {
-	width: 305px;
+	max-width: 305px;
 	height: 305px;
 	object-fit: cover;
 	border-radius: 50%;
@@ -248,9 +265,45 @@ header .sp .list li span {
 .about .skillName {
 	text-align: center;
 }
+
+.box26 {
+	position: relative;
+	margin: 2em 0;
+	padding: 2.5em 2.5em;
+	border: solid 3px #ddd;
+	border-radius: 8px;
+}
+.box26 .box-title {
+	position: absolute;
+	display: inline-block;
+	top: -2px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	padding: 0 9px;
+	line-height: 1;
+	font-size: 19px;
+	background: #fff;
+	color: #333;
+	font-weight: bold;
+}
+.box26 p {
+	margin: 0;
+	padding: 0;
+}
 /*==========about page==========*/
 
 /*==========works page==========*/
+.works .deliverables {
+	box-shadow: 4px 4px 4px -2px #808080;
+	width: calc(35% - 20px);
+	transition-duration: 0.2s;
+}
+
+.works .deliverables:hover {
+	opacity: 0.9;
+	box-shadow: 2px 2px 2px -2px #808080;
+}
 
 .works .deliverables > a {
 	display: block;
@@ -259,11 +312,8 @@ header .sp .list li span {
 .works .contentsWrap {
 	position: relative;
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
-}
-
-.works .deliverables {
-	width: calc(50% - 15px);
 }
 
 .works .deliverables .image {
@@ -274,11 +324,11 @@ header .sp .list li span {
 }
 
 .works .deliverables:nth-child(2n) {
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 .works .deliverables:nth-child(n + 3) {
-	margin-top: 20px;
+	margin-top: 30px;
 }
 /*==========works page==========*/
 
@@ -337,13 +387,48 @@ header .sp .list li span {
 }
 /*==========contact_form page==========*/
 
+/*==========deliverables page==========*/
+.deliverablesDetails {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+}
+
+.deliverablesDetails .summaryWrap {
+	margin-left: 30px;
+}
+
+.deliverablesDetails .deliverablesImage {
+	width: 50%;
+}
+
+.deliverablesDetails .deliverables > a {
+	display: block;
+}
+
+.deliverablesDetails .contentsWrap {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.deliverablesDetails .deliverablesImage .image {
+	background: url(../img/nakamura1.jpg) center center / cover no-repeat;
+	padding: calc(150 / 300 * 100%) 20px 0;
+	background-position: center center;
+	background-size: cover;
+}
+
+/*==========deliverables page==========*/
+
 /*==========footer page==========*/
 footer {
 	height: 100px;
-	background-color: #a9a9a9;
-	color: #fff;
+	background-color: #eee;
+	color: #333;
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 100px;
 	display: flex;
 	align-items: center;
 }
@@ -373,9 +458,9 @@ footer p {
 /*==========/767px以上適用==========*/
 
 /*==========1024px以下で適用==========*/
-@media (max-width: 1024px) and (min-width: 425px) {
-	.works .deliverables {
-		width: calc(50% - 15px);
+@media (max-width: 1024px) and (min-width: 767px) {
+	section {
+		margin-top: 30px;
 	}
 }
 /*==========/1024px以下で適用==========*/
@@ -390,8 +475,12 @@ footer p {
 		display: block;
 	}
 
-	section {
-		margin-top: 70px;
+	.about {
+		margin: 0;
+	}
+
+	section + section {
+		margin-top: 100px;
 	}
 
 	header .spMenu {
@@ -489,14 +578,22 @@ footer p {
 
 	.about .introduce .introduce {
 		max-width: 375px;
-		width: 96%;
+		width: 94%;
 		height: auto;
+	}
+
+	.works .deliverables {
+		width: calc(50% - 20px);
 	}
 }
 /*==========/767px以下で適用==========*/
 
 /*==========425px以下で適用==========*/
 @media (max-width: 425px) {
+	.works .deliverables {
+		width: 100%;
+	}
+
 	.works .deliverables + .deliverables {
 		margin: 20px 0 0;
 	}
