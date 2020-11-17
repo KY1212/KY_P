@@ -33,7 +33,6 @@ section h2 > span {
 	display: flex;
 	justify-content: center;
 }
-
 /* スクロールで各セクションごときりかわるようにする */
 
 img {
@@ -159,7 +158,7 @@ header .sp .list li span {
 
 .firstView .top2 {
 	font-size: 25px;
-	width: 130px;
+	width: 165px;
 	margin: 25px auto 0;
 }
 
@@ -229,51 +228,19 @@ header .sp .list li span {
 .about .detailsWrap {
 	display: flex;
 	flex-direction: column;
-	margin-left: 40px;
+	width: 60%;
+	margin: 0 0 0 40px;
 }
 
-.about .details {
-	flex-direction: column;
-}
-
-.about .details:nth-child(n + 2) {
-	margin-top: 30px;
-}
-
-.about .introduce img {
-	max-width: 305px;
-	height: 305px;
-	object-fit: cover;
-	border-radius: 50%;
-	background-position: center center;
-	background-size: cover;
-}
-
-.about .skillWrap {
-	margin-top: 10px;
-	display: flex;
-	justify-content: center;
-	max-width: 400px;
-	width: 100%;
-	flex-wrap: wrap;
-}
-
-.about .skillImage {
-	width: 100px;
-}
-
-.about .skillName {
-	text-align: center;
-}
-
-.box26 {
+.detailsBox {
 	position: relative;
 	margin: 2em 0;
 	padding: 2.5em 2.5em;
 	border: solid 3px #ddd;
 	border-radius: 8px;
 }
-.box26 .box-title {
+
+.detailsBox .box-title {
 	position: absolute;
 	display: inline-block;
 	top: -2px;
@@ -287,10 +254,47 @@ header .sp .list li span {
 	color: #333;
 	font-weight: bold;
 }
-.box26 p {
+
+.detailsBox p {
 	margin: 0;
 	padding: 0;
 }
+
+.about .detailsBox:nth-child(1) {
+	font-size: 19px;
+}
+
+.about .details {
+	flex-direction: column;
+}
+
+.about .details:nth-child(n + 2) {
+	margin-top: 30px;
+}
+
+.about .introduce img {
+	max-width: 305px;
+	object-fit: cover;
+	border-radius: 50%;
+	background-position: center center;
+	background-size: cover;
+	align-self: flex-start;
+}
+
+.about .skillWrap {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.about .skillImage {
+	width: 100px;
+}
+
+.about .skillName {
+	text-align: center;
+}
+
 /*==========about page==========*/
 
 /*==========works page==========*/
@@ -391,7 +395,6 @@ header .sp .list li span {
 .deliverablesDetails {
 	display: flex;
 	justify-content: center;
-	/* align-items: center; */
 }
 
 .deliverablesDetails .summaryWrap {
@@ -573,6 +576,7 @@ footer p {
 	}
 
 	.about .detailsWrap {
+		width: 100%;
 		margin: 0;
 	}
 
@@ -589,7 +593,27 @@ footer p {
 /*==========/767px以下で適用==========*/
 
 /*==========425px以下で適用==========*/
+@media (max-width: 520px) {
+	.about .skill:nth-child(2n) {
+		margin-left: 20px;
+	}
+
+	.about .skill:nth-child(n + 3) {
+		margin-top: 20px;
+	}
+
+	.about .skillImage {
+		width: 140px;
+	}
+}
+/*==========425px以下で適用==========*/
+
+/*==========425px以下で適用==========*/
 @media (max-width: 425px) {
+	.about .skillImage {
+		width: 100px;
+	}
+
 	.works .deliverables {
 		width: 100%;
 	}
