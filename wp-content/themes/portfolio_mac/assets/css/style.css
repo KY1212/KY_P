@@ -25,7 +25,11 @@ main {
 	flex: 1;
 }
 
-.index {
+main.index {
+	margin-top: 0;
+}
+
+header.index {
 	margin: 0;
 }
 
@@ -227,7 +231,6 @@ header .sp .list li span {
 
 .about .contentsWrap {
 	display: flex;
-	justify-content: center;
 	align-items: center;
 }
 
@@ -428,13 +431,12 @@ footer {
 	background-color: #eee;
 	color: #333;
 	text-align: center;
-	margin-top: 100px;
 	display: flex;
 	align-items: center;
 }
 
 footer .inner {
-	margin: auto;
+	margin: 0 auto;
 }
 
 footer .contentsWrap {
@@ -470,13 +472,12 @@ footer p {
 	.pc {
 		display: none;
 	}
-
-	.sp {
+	.about.target {
 		display: block;
 	}
 
-	.about {
-		margin: 0;
+	.sp {
+		display: block;
 	}
 
 	section + section {
@@ -548,14 +549,6 @@ footer p {
 
 	.firstView .menu {
 		display: none;
-	}
-
-	.about {
-		flex-direction: column;
-	}
-
-	.about .inner {
-		flex-direction: column;
 	}
 
 	.about .contentsWrap {
