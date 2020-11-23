@@ -25,7 +25,6 @@ function read_assets() {
     array(),true
   );
 
-
 }
 
 function my_delete_local_jquery() {
@@ -53,21 +52,6 @@ function sidebar_tag() {
   foreach ($term_list as $term) {
     $tags = (get_term_link( $term, 'post_tag' ));
     echo '<li class="tag"><a href="'.$tags.'">'.$term->name.'</a></li>';
-  }
-}
-
-function tag_loop() {
-  $tags = get_the_tags();
-  $tagCounter = "";
-  if ($tags) {
-    foreach ($tags as $tag) {
-      ++$tagCounter;
-      $tagLink = get_tag_link($tag->term_id);
-      if ($tagCounter > 3) {
-        break;
-      }
-      echo '<li class="tag"><a href="'.$tagLink.'">' . $tag->name . '</a></li>';
-    }
   }
 }
 
