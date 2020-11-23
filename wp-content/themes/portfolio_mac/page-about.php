@@ -1,10 +1,10 @@
 <?php
 /*
-Template Name: index
+Template Name: about
 */
-get_header(); ?>
-		<main class="index">
-			<section class="firstView">
+get_header('other'); ?>
+		<main>
+			<section class="firstView sp">
 				<div class="inner">
 					<div class="contentsWrap">
 						<div class="topWrap">
@@ -16,20 +16,20 @@ get_header(); ?>
 						<div class="menu">
 							<ul class="list">
 								<li>
-									<a href="<?php echo get_stylesheet_directory_uri(); ?>/about">ABOUT<span>ABOUT</span></a>
+									<a href="<?php echo get_stylesheet_directory_uri(); ?>./about.php">ABOUT<span>ABOUT</span></a>
 								</li>
 								<li>
-									<a href="<?php echo get_stylesheet_directory_uri(); ?>/works">WORKS<span>WORKS</span></a>
+									<a href="<?php echo get_stylesheet_directory_uri(); ?>./works.php">WORKS<span>WORKS</span></a>
 								</li>
 								<li>
-									<a href="<?php echo get_stylesheet_directory_uri(); ?>/contact">CONTACT<span>CONTACT</span></a>
+									<a href="<?php echo get_stylesheet_directory_uri(); ?>./contact.php">CONTACT<span>CONTACT</span></a>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section class="about sp" id="about">
+			<section class="about target" id="about">
 				<div class="inner">
 					<h2 class="heading">About<span>About</span></h2>
 					<div class="contentsWrap">
@@ -110,9 +110,15 @@ get_header(); ?>
 				<div class="inner">
 					<h2 class="heading">Contact<span>Contact</span></h2>
 					<div class="contentsWrap">
-						<?php echo do_shortcode( '[mwform_formkey key="27"]' ); ?>
+			<?php echo do_shortcode( '[mwform_formkey key="41"]' ); ?>
+
 					</div>
 				</div>
 			</section>
 		</main>
-<?php get_footer(); ?>
+
+	<?php
+		get_footer();
+	?>
+	</body>
+</html>

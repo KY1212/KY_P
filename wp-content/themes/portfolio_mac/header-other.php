@@ -11,12 +11,22 @@
 </head>
 	<body>
 		<header>
-			<div class="sp">
+			<div class="pc">
 				<div class="inner">
 					<h1>
-						<a href="<?php echo home_url(); ?>">
-title</a>
+						<a href="<?php echo home_url(); ?>">title</a>
 					</h1>
+					<nav>
+						<ul class="list">
+							<li><a href="<?php echo get_stylesheet_directory_uri(); ?>/about">ABOUT</a></li>
+							<li><a href="<?php echo get_stylesheet_directory_uri(); ?>/works">WORKS</a></li>
+							<li><a href="<?php echo get_stylesheet_directory_uri(); ?>/contact">CONTACT</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="sp">
+				<div class="inner">
 					<div class="spMenu">
 						<div class="hamburger">
 							<span></span>

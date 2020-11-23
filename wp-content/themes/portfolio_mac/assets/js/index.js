@@ -1,6 +1,6 @@
-$(function () {
+// $(function () {
 // Wordpress化する際下行に変更↓↓
-// jQuery(function($){
+jQuery(function($){
 
   const $menuList = $(".firstView .menu li a");
   const $duplicateTxt = $(".firstView span");
@@ -63,28 +63,36 @@ $(function () {
 
     ScrollReveal().reveal('.top1', {
       duration: 1000,
-      origin: 'left',
-      distance: '250px',
+      origin: 'top',
+      distance: '50px',
       reset: true
     });
     ScrollReveal().reveal('.top2', {
       duration: 1000,
-      origin: 'right',
-      distance: '250px',
+      origin: 'bottom',
+      distance: '50px',
       reset: true
     });
     ScrollReveal().reveal('.about', {
       duration: 1000,
-      distance: '250px',
+      distance: '150px',
       scale: 0.1,
       reset: true
     });
     ScrollReveal().reveal('.works', {
       duration: 1000,
-      distance: '250px',
+      distance: '150px',
       scale: 0.1,
       reset: true
     });
+    ScrollReveal().reveal('.form', {
+      duration: 1000,
+      distance: '150px',
+      scale: 0.1,
+      reset: true
+    });
+
+
 
     function delayDisplay() {
       let delayTime = 300;
@@ -135,6 +143,36 @@ $(function () {
     },100);
   }
 
+  function scroll() {
+    // let thisOffset;
+    // $(window).on('load', function () {
+    //   thisOffset = $('.form').offset().top + $('.form').outerHeight();
+    // });
+    // $(window).scroll(function () {
+    //   if ($(window).scrollTop() + $(window).height() > thisOffset) {
+    //     $(".form").css({
+    //       display: "block"
+    //     });
+    //   } else {
+    //     // 特定の要素を超えていない
+    //   }
+    // });
+    $(window).on('scroll', function () {
+      var doch = $(document).innerHeight(); //ページ全体の高さ
+      var winh = $(window).innerHeight(); //ウィンドウの高さ
+      var bottom = doch - winh; //ページ全体の高さ - ウィンドウの高さ = ページの最下  部位置
+      if (bottom * 0.7 <= $(window).scrollTop()) {
+        //一番下までスクロールした時に実行
+        // console.log("最底辺！");
+        // $("section .contentsWrap").css({
+        //   display: "block"
+        // });
+      } else{
+
+    }
+  });
+}
+
   //アニメーションストップ
   function stopAnimate() {
     clearInterval(menuAnimate);
@@ -153,6 +191,8 @@ $(function () {
     setEvent();
     startAnimate();
     toggleNav();
+    scroll();
+
   }
   init();
 });

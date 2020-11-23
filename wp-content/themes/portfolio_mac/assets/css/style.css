@@ -1,3 +1,10 @@
+/*
+Theme Name: KY_P
+Author: Yusuke Kato
+Description: This is our original theme.
+Version: 5.5.1
+*/
+
 @charset "UTF-8";
 
 /*==========global==========*/
@@ -43,6 +50,19 @@ img {
 	width: 100%;
 	height: auto;
 	vertical-align: bottom;
+}
+
+.btn {
+	border-radius: 9999px;
+	width: 250px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+}
+
+.btn:hover {
+	opacity: 0.9;
 }
 
 body {
@@ -134,7 +154,7 @@ header .sp .list {
 	top: 0;
 	color: #fff;
 }
-
+/*
 header .sp .list li {
 	position: relative;
 }
@@ -142,12 +162,22 @@ header .sp .list li {
 header .sp .list li span {
 	position: absolute;
 	opacity: 0.46;
+} */
+
+header .sp li {
+	display: flex;
+	justify-content: center;
 }
 /*==========firstView==========*/
+.firstView.sp {
+	display: none;
+}
+
 .firstView {
 	display: flex;
 	position: relative;
 	height: 100vh;
+	width: 100%;
 }
 
 .firstView .contentsWrap {
@@ -225,7 +255,7 @@ header .sp .list li span {
 .works h2.heading {
 	width: 143px;
 }
-.contact_form h2.heading {
+.form h2.heading {
 	width: 178px;
 }
 
@@ -296,7 +326,6 @@ header .sp .list li span {
 .about .skillName {
 	text-align: center;
 }
-
 /*==========about page==========*/
 
 /*==========works page==========*/
@@ -336,60 +365,60 @@ header .sp .list li span {
 }
 /*==========works page==========*/
 
-/*==========contact_form page==========*/
-
-.contact_form .contents {
+/*==========form page==========*/
+.form .contents {
 	margin: 40px auto 0;
 }
 
-.contact_form > p {
+.form > p {
 	margin-top: 40px;
 	text-align: center;
 }
 
-.contact_form .contentsWrap {
+.form .contentsWrap {
 	max-width: 640px;
 	margin: 50px auto 0;
 }
 
-.contact_form .item {
+.form .item {
 	display: flex;
 	flex-direction: column;
 }
 
-.contact_form .item span {
+.form .item span {
 	color: #cf2626;
 }
 
-.contact_form .item + .item {
+.form .item + .item {
 	margin-top: 20px;
 }
 
-.contact_form .item .label {
+.form .item .label {
 	line-height: 1;
 }
 
-.contact_form .item .inputs {
+.form .item .inputs {
 	margin-top: 10px;
 	border: 1.5px solid #cccccc;
 }
 
-.contact_form .item textarea {
+.form .item textarea {
 	height: 326px;
 }
 
-.contact_form .submit {
+.form .submit {
 	margin-top: 30px;
 }
 
-.contact_form .btn {
+.form .btn {
 	border: 0;
 	cursor: pointer;
-	background-color: #558f54;
+	background-color: #b0c4de;
 	color: #ffffff;
 	margin: auto;
 }
-/*==========contact_form page==========*/
+
+/*==========form page==========*/
 
 /*==========deliverables page==========*/
 .deliverablesDetails {
@@ -427,6 +456,7 @@ header .sp .list li span {
 
 /*==========footer page==========*/
 footer {
+	margin-top: 50px;
 	height: 100px;
 	background-color: #eee;
 	color: #333;
@@ -461,7 +491,7 @@ footer p {
 
 /*==========1024px以下で適用==========*/
 @media (max-width: 1024px) and (min-width: 767px) {
-	section {
+	section + section {
 		margin-top: 30px;
 	}
 }
@@ -472,6 +502,7 @@ footer p {
 	.pc {
 		display: none;
 	}
+
 	.about.target {
 		display: block;
 	}
@@ -480,7 +511,12 @@ footer p {
 		display: block;
 	}
 
-	section + section {
+	.firstView.sp {
+		display: flex;
+		bottom: 200px;
+	}
+
+	section:nth-child(n + 3) {
 		margin-top: 100px;
 	}
 
