@@ -27,6 +27,9 @@
 			</div>
 			<div class="sp">
 				<div class="inner">
+					<h1>
+						<a href="<?php echo home_url(); ?>">title</a>
+					</h1>
 					<div class="spMenu">
 						<div class="hamburger">
 							<span></span>
