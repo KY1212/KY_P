@@ -82,6 +82,10 @@ body {
 	margin: auto;
 }
 
+.inner > .heading {
+	margin: auto;
+}
+
 .contentsWrap {
 	margin-top: 50px;
 }
@@ -154,15 +158,6 @@ header .sp .list {
 	top: 0;
 	color: #fff;
 }
-/*
-header .sp .list li {
-	position: relative;
-}
-
-header .sp .list li span {
-	position: absolute;
-	opacity: 0.46;
-} */
 
 header .sp li {
 	display: flex;
@@ -236,15 +231,8 @@ header .sp li {
 /*==========./firstView==========*/
 
 /*==========about page==========*/
-.inner > .heading {
-	display: flex;
-	justify-content: center;
-	margin: auto;
-}
-
 .about h2.heading {
 	width: 137px;
-	margin: auto;
 }
 
 .about h3.heading {
@@ -261,6 +249,7 @@ header .sp li {
 
 .about .contentsWrap {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -291,10 +280,10 @@ header .sp li {
 	font-weight: bold;
 }
 
-.detailsBox p {
+/* .detailsBox p {
 	margin: 0;
 	padding: 0;
-}
+} */
 
 .about .detailsBox:nth-child(1) {
 	font-size: 19px;
@@ -419,6 +408,14 @@ header .sp li {
 }
 
 /*==========form page==========*/
+.confirm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/*==========confirm page==========*/
+
+/*==========confirm page==========*/
 
 /*==========deliverables page==========*/
 .deliverablesDetails {
@@ -516,7 +513,7 @@ footer p {
 		bottom: 200px;
 	}
 
-	section:nth-child(n + 3) {
+	section:nth-child(n + 2) {
 		margin-top: 100px;
 	}
 
