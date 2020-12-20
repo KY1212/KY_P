@@ -5,16 +5,16 @@ Template Name: index
 get_header(); ?>
 	<main class="index">
 		<section class="firstView">
-			<?php include('common-firstView.php'); ?>
+			<?php include('common/common-firstView.php'); ?>
 		</section>
-		<section class="about sp" id="about">
-			<?php include('common-about.php'); ?>
+		<section class="about sp" id="menu-item-22">
+			<?php include('common/common-about.php'); ?>
 		</section>
-		<section class="works sp" id="works">
-			<?php include('common-works.php'); ?>
+		<section class="works sp" id="menu-item-25">
+			<?php include('common/common-works.php'); ?>
 		</section>
-		<section class="form sp" id="form">
-			<?php include('common-contact.php'); ?>
+		<section class="form sp" id="menu-item-23">
+		<p>お問い合わせはこちらから</p>
 		</section>
 	</main>
 <?php get_footer(); ?>

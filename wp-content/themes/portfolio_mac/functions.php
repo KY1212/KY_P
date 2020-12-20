@@ -24,10 +24,9 @@ function read_assets() {
     'https://unpkg.com/scrollreveal',
     array(),true
   );
-
 }
 
-function my_delete_local_jquery() {
+function delete_local_jquery() {
   wp_deregister_script('jquery');
 }
 
@@ -72,14 +71,19 @@ function wp_active_function() {
   );
 }
 
-function hooks() {
-  add_action('wp_enqueue_scripts', 'read_assets', 'my_delete_local_jquery');
-  add_filter('wp_nav_menu', 'wp_menu_optimization');
+function userinfo_global() {
+    global $users_info;
+    $users_info = wp_get_current_user();
+}
+add_action( 'init', 'userinfo_global' );
 
+function hooks() {
+  add_action('wp_enqueue_scripts', 'read_assets', 'delete_local_jquery');
+  add_filter('wp_nav_menu', 'wp_menu_optimization');
 }
 
 function init() {
-  my_delete_local_jquery();
+  delete_local_jquery();
   display_thumbnails();
   wp_active_function();
   hooks();

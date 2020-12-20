@@ -44,7 +44,6 @@ section h2 > span {
 	display: flex;
 	justify-content: center;
 }
-/* スクロールで各セクションごときりかわるようにする */
 
 img {
 	width: 100%;
@@ -54,11 +53,13 @@ img {
 
 .btn {
 	border-radius: 9999px;
-	width: 250px;
+	width: 31.4vw;
+	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 20px;
+	color: #fff;
 }
 
 .btn:hover {
@@ -280,11 +281,6 @@ header .sp li {
 	font-weight: bold;
 }
 
-/* .detailsBox p {
-	margin: 0;
-	padding: 0;
-} */
-
 .about .detailsBox:nth-child(1) {
 	font-size: 19px;
 }
@@ -318,39 +314,49 @@ header .sp li {
 /*==========about page==========*/
 
 /*==========works page==========*/
-.works .deliverables {
-	box-shadow: 4px 4px 4px -2px #808080;
-	width: calc(35% - 20px);
-	transition-duration: 0.2s;
-}
-
-.works .deliverables:hover {
-	opacity: 0.9;
-	box-shadow: 2px 2px 2px -2px #808080;
-}
-
-.works .deliverables > a {
-	display: block;
-}
-
-.works .contentsWrap {
-	position: relative;
+.works .inner .postWrap {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	word-break: break-all;
+	margin: 60px auto 0;
+	width: 850px;
 }
 
-.works .deliverables .image {
-	background: url(../img/nakamura1.jpg) center center / cover no-repeat;
-	padding: calc(150 / 300 * 100%) 20px 0;
+.works .inner .postWrap .post {
+	width: 400px;
 }
 
-.works .deliverables:nth-child(2n) {
+.works .post > a {
+	display: block;
+}
+
+.works .post .image {
+	color: #fff;
+	padding: calc(172 / 305 * 100%) 20px 0;
+	background-position: center center;
+	background-size: cover;
+	font-size: 18px;
+	box-shadow: 2px 2px 4px #333 inset;
+}
+
+.works .inner .post:nth-child(n + 3) {
+	margin-top: 30px;
+}
+
+.works .inner .post:nth-child(2n) {
 	margin-left: 30px;
 }
 
-.works .deliverables:nth-child(n + 3) {
-	margin-top: 30px;
+@media (max-width: 767px) {
+	.works .inner .postWrap {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.works .inner .post + .post {
+		margin: 30px 0 0;
+	}
 }
 /*==========works page==========*/
 
@@ -391,8 +397,12 @@ header .sp li {
 	border: 1.5px solid #cccccc;
 }
 
-.form .item textarea {
-	height: 326px;
+input,
+textarea {
+	outline: none;
+	width: 100%;
+	border: 1.5px solid #cccccc;
+	border-radius: 2px;
 }
 
 .form .submit {
@@ -408,41 +418,169 @@ header .sp li {
 }
 
 /*==========form page==========*/
-.confirm {
+
+.contact_form {
+	margin: 60px auto 0;
+	width: 96%;
+}
+
+.contact_form .contents {
+	margin: 40px auto 0;
+}
+
+.contact_form > p {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.contact_form .formWrap {
+	max-width: 640px;
+	margin: auto;
+}
+
+.contact_form .item {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact_form .item span {
+	color: #cf2626;
+}
+
+.contact_form .item + .item {
+	margin-top: 20px;
+}
+
+.contact_form .item .label {
+	line-height: 1;
+}
+
+.contact_form .item .inputs {
+	margin-top: 10px;
+	border: 1.5px solid #cccccc;
+	word-wrap: break-word;
+}
+
+.contact_form .item textarea {
+	height: 326px;
+}
+
+/*==========confirm page==========*/
+.confirm .inner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	margin-top: 30px;
 }
-/*==========confirm page==========*/
 
-/*==========confirm page==========*/
+.confirm .submit {
+	margin-top: 30px;
+}
 
-/*==========deliverables page==========*/
-.deliverablesDetails {
+.confirm .btnWrap {
 	display: flex;
 	justify-content: center;
 }
 
-.deliverablesDetails .summaryWrap {
+.confirm .item {
+	display: flex;
+}
+
+.confirm .label {
+	margin-right: 20px;
+}
+
+.confirm {
+	flex-wrap: wrap;
+}
+
+.confirm .mw_wp_form {
+	margin-top: 30px;
+}
+
+.confirm .form_display {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.btnWrap {
+	margin-top: 30px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.confirm .btnWrap .fixBtn .btn {
+	background-color: #fff;
+	color: #666666;
+	border: 1px solid #666666;
+}
+
+.confirm .btn {
+	background-color: #b0c4de;
+	color: #ffffff;
+}
+
+/*==========confirm page==========*/
+
+/* ==========contact_complete========== */
+
+.contact_complete .headingTop {
+	text-align: center;
+}
+
+.contact_complete .done {
+	margin-top: 24px;
+	text-align: center;
+}
+
+.contact_complete .topPageBtn {
+	margin: 30px auto 0;
+}
+
+.contact_complete .topPageBtn .btn {
+	background-color: #fff;
+	color: #666666;
+	border: 1px solid #666666;
+	margin: auto;
+}
+/* ==========/contact_complete========== */
+
+/*==========deliverables page==========*/
+
+.deliverables h2.heading {
+	width: 137px;
+}
+
+.deliverables {
+	display: flex;
+	justify-content: center;
+}
+
+.deliverables .summaryWrap {
 	margin-left: 30px;
 }
 
-.deliverablesDetails .deliverablesImage {
+.deliverables .deliverablesImage {
 	width: 50%;
 }
 
-.deliverablesDetails .deliverables > a {
+.deliverables .deliverables > a {
 	display: block;
 }
 
-.deliverablesDetails .contentsWrap {
+.deliverables .contentsWrap {
 	position: relative;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 }
 
-.deliverablesDetails .deliverablesImage .image {
+.deliverables .deliverablesImage .image {
 	background: url(../img/nakamura1.jpg) center center / cover no-repeat;
 	padding: calc(150 / 300 * 100%) 20px 0;
 	background-position: center center;
@@ -633,6 +771,10 @@ footer p {
 
 	.works .deliverables + .deliverables {
 		margin: 20px 0 0;
+	}
+
+	.contact_complete .topPageBtn {
+		margin: 30px auto 0;
 	}
 }
 /*==========/425px以下で適用==========*/

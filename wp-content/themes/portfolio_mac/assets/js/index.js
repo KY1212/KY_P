@@ -173,6 +173,28 @@ jQuery(function($){
   });
 }
 
+  function smooth_scroll() {
+
+    const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+  for (let i = 0; i < smoothScrollTrigger.length; i++){
+    smoothScrollTrigger[i].addEventListener('click', (e) => {
+      e.preventDefault();
+      let href = smoothScrollTrigger[i].getAttribute('href');
+      let targetElement = document.getElementById(href.replace('#', ''));
+      const rect = targetElement.getBoundingClientRect().top;
+      const offset = window.pageYOffset;
+      const gap = 60;
+      const target = rect + offset - gap;
+      window.scrollTo({
+        top: target,
+        behavior: 'smooth',
+      });
+    });
+  }
+  }
+
+
+
   //アニメーションストップ
   function stopAnimate() {
     clearInterval(menuAnimate);
@@ -192,6 +214,7 @@ jQuery(function($){
     startAnimate();
     toggleNav();
     scroll();
+    smooth_scroll();
 
   }
   init();
