@@ -1,35 +1,34 @@
 <?php
 /*
-Template Name: single
+Template Name: deliveribles
 */
 get_header('other'); ?>
-<main>
-	<section class="deliverables">
-	<h2 class="heading">成果物<span>成果物</span></h2>
-		<div class="contentsWrap">
-			<?php
-			$the_query = sub_loop(6,$paged);
-				$counter = '';
-				if ($the_query->have_posts()) :
-				while ($the_query->have_posts()) : $the_query->the_post();
-				++$counter;
-			?>
-			<div class="deliverables">
-				<a href="<?php the_permalink(); ?>">
-				<?php
-					$article_url = wp_get_attachment_url(get_post_thumbnail_id());
-					$article_bg = "style='background-image:url(".$article_url.");'";
-				?>
-				<div class="image" <?php echo $article_bg; ?>></div>
-				<p class="description"><?php the_title(); ?></p>
-				</a>
-			</div>
-				<?php
-					endwhile; endif;
-					wp_reset_postdata();
-				?>
-		</div>
-</section>
-</main>
-
+	<main>
+    <section class="deliveribles target">
+      <div class="inner">
+        <div class="postWrap">
+        <?php if(have_posts()): while(have_posts()): the_post(); ?>
+          <div class="deliveriblesImg">
+            <?php
+              if( has_post_thumbnail() ):
+                the_post_thumbnail('full');
+              else :
+              endif;
+            ?>
+          </div>
+          <div class="detailsWrap">
+            <p class="postText">
+              <h2 class="title">
+                <?php the_title(); ?>
+              </h2>
+              <p class="comment">
+                <?php the_content(); ?>
+              </div>
+            </p>
+          </div>
+          <?php endwhile; endif; ?>
+        </div>
+      </div>
+    </section>
+  </main>
 <?php get_footer(); ?>

@@ -369,6 +369,25 @@ header .sp li {
 }
 /*==========works page==========*/
 
+/*==========deliveribles page==========*/
+.deliveribles .postWrap {
+	display: flex;
+	justify-content: center;
+}
+
+.deliveribles .deliveriblesImg {
+	width: 400px;
+}
+
+.deliveribles .detailsWrap {
+	width: 450px;
+	margin: 0 100px 0 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+/*==========deliveribles page==========*/
+
 /*==========form page==========*/
 .form .contents {
 	margin: 40px auto 0;
