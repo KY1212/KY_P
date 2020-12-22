@@ -11,7 +11,7 @@ get_header('other'); ?>
 		<?php include('common/common-works.php'); ?>
 	</section>
 	<section class="form sp" id="form">
-		<p>お問い合わせはこちらから</p>
+		<p><a href="<?php echo get_stylesheet_directory_uri(); ?>/contact">お問い合わせはこちらから</a></p>
 	</section>
 </main>
 <?php get_footer(); ?>

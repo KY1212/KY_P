@@ -5,7 +5,6 @@ Template Name: single
 get_header('other'); ?>
 <main>
 	<section class="deliverables">
-<div class="inner">
 	<h2 class="heading">成果物<span>成果物</span></h2>
 		<div class="contentsWrap">
 			<?php
@@ -30,7 +29,6 @@ get_header('other'); ?>
 					wp_reset_postdata();
 				?>
 		</div>
-</div>
 </section>
 </main>
 

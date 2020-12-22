@@ -79,11 +79,6 @@ body {
 
 .inner {
 	width: 94%;
-	max-width: 1240px;
-	margin: auto;
-}
-
-.inner > .heading {
 	margin: auto;
 }
 
@@ -94,6 +89,11 @@ body {
 .displayNone {
 	display: none;
 }
+
+.heading {
+	margin: auto;
+}
+
 h2.heading {
 	text-align: center;
 	font-size: 45px;
@@ -123,6 +123,7 @@ header .inner {
 	justify-content: space-between;
 	align-items: center;
 	height: 100px;
+	max-width: 1240px;
 }
 
 header h1 > a {
@@ -314,17 +315,16 @@ header .sp li {
 /*==========about page==========*/
 
 /*==========works page==========*/
-.works .inner .postWrap {
+.works .postWrap {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	word-break: break-all;
 	margin: 60px auto 0;
-	width: 850px;
 }
 
-.works .inner .postWrap .post {
-	width: 400px;
+.works .postWrap .post {
+	width: calc(45% - 15px);
 }
 
 .works .post > a {
@@ -337,24 +337,33 @@ header .sp li {
 	background-position: center center;
 	background-size: cover;
 	font-size: 18px;
-	box-shadow: 2px 2px 4px #333 inset;
+	box-shadow: 4px 4px 4px gray;
+	transition-duration: 0.3s;
 }
 
-.works .inner .post:nth-child(n + 3) {
+.works .post .image:hover {
+	box-shadow: 0 0;
+}
+
+.works .post:nth-child(n + 3) {
 	margin-top: 30px;
 }
 
-.works .inner .post:nth-child(2n) {
+.works .post:nth-child(2n) {
 	margin-left: 30px;
 }
 
-@media (max-width: 767px) {
-	.works .inner .postWrap {
-		display: flex;
+@media (max-width: 425px) {
+	.works .postWrap {
 		flex-direction: column;
+		align-items: center;
 	}
 
-	.works .inner .post + .post {
+	.works .postWrap .post {
+		width: 100%;
+	}
+
+	.works .post + .post {
 		margin: 30px 0 0;
 	}
 }
@@ -623,6 +632,13 @@ footer p {
 	}
 }
 /*==========/767px以上適用==========*/
+
+@media (max-width: 1024px) and (min-width: 426px) {
+	.wrap .postWrap {
+		width: 96%;
+		margin: 30px auto 0;
+	}
+}
 
 /*==========1024px以下で適用==========*/
 @media (max-width: 1024px) and (min-width: 767px) {
