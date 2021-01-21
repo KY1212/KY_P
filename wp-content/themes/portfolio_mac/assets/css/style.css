@@ -28,7 +28,7 @@ a {
 }
 
 main {
-	margin-top: 100px;
+	margin-top: 50px;
 	flex: 1;
 }
 
@@ -53,8 +53,6 @@ img {
 
 .btn {
 	border-radius: 9999px;
-	width: 31.4vw;
-	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -258,7 +256,7 @@ header .sp li {
 .about .detailsWrap {
 	display: flex;
 	flex-direction: column;
-	width: 60%;
+	width: 50%;
 	margin: 0 0 0 40px;
 }
 
@@ -325,6 +323,8 @@ header .sp li {
 
 .works .postWrap .post {
 	width: calc(45% - 15px);
+	position: relative;
+	z-index: 1;
 }
 
 .works .post > a {
@@ -341,8 +341,23 @@ header .sp li {
 	transition-duration: 0.3s;
 }
 
-.works .post .image:hover {
+.works .discription {
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	padding: 20px;
+	font-size: 20px;
+	width: 100%;
+	background: linear-gradient(to bottom, transparent, #333 86%, #333);
+	transition-duration: 0.3s;
+}
+
+.works .post .image.active {
 	box-shadow: 0 0;
+}
+
+.works .post .discription.active {
+	padding: 50px 20px;
 }
 
 .works .post:nth-child(n + 3) {
@@ -375,15 +390,24 @@ header .sp li {
 	justify-content: center;
 }
 
-.deliveribles .deliveriblesImg {
-	width: 400px;
+.deliveribles h2.heading {
+	width: 150px;
 }
 
 .deliveribles .detailsWrap {
-	width: 450px;
-	margin: 0 100px 0 50px;
 	display: flex;
 	flex-direction: column;
+	margin-left: 100px;
+}
+
+.deliveribles .postWrap h2.heading {
+	margin: 0;
+	text-align: left;
+	font-size: 30px;
+}
+
+.deliveribles .deliveriblesImg {
+	width: 400px;
 }
 
 /*==========deliveribles page==========*/
@@ -433,133 +457,80 @@ textarea {
 	border-radius: 2px;
 }
 
-.form .submit {
-	margin-top: 30px;
-}
-
-.form .btn {
+.btn {
 	border: 0;
 	cursor: pointer;
 	background-color: #b0c4de;
 	color: #ffffff;
 	margin: auto;
+	width: 400px;
 }
 
 /*==========form page==========*/
 
-.contact_form {
+/*==========confirm==========*/
+.contact_confirm {
+	max-width: 640px;
 	margin: 60px auto 0;
 	width: 96%;
+	flex: 1;
 }
 
-.contact_form .contents {
-	margin: 40px auto 0;
+.contact_confirm h2.heading {
+	width: 180px;
 }
 
-.contact_form > p {
+.contact_confirm .text {
 	margin-top: 40px;
 	text-align: center;
 }
 
-.contact_form .formWrap {
-	max-width: 640px;
-	margin: auto;
+.contact_confirm .text span {
+	font-weight: 600;
 }
 
-.contact_form .item {
-	display: flex;
-	flex-direction: column;
-}
-
-.contact_form .item span {
-	color: #cf2626;
-}
-
-.contact_form .item + .item {
+.contact_confirm .contents {
 	margin-top: 20px;
 }
 
-.contact_form .item .label {
-	line-height: 1;
+.contact_confirm input {
+	word-break: normal;
 }
 
-.contact_form .item .inputs {
-	margin-top: 10px;
-	border: 1.5px solid #cccccc;
-	word-wrap: break-word;
-}
-
-.contact_form .item textarea {
-	height: 326px;
-}
-
-/*==========confirm page==========*/
-.confirm .inner {
+.contact_confirm .item {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin-top: 30px;
+	border-bottom: 1px solid #cccccc;
+	padding: 20px 0;
 }
 
-.confirm .submit {
-	margin-top: 30px;
-}
-
-.confirm .btnWrap {
-	display: flex;
-	justify-content: center;
-}
-
-.confirm .item {
-	display: flex;
-}
-
-.confirm .label {
-	margin-right: 20px;
-}
-
-.confirm {
-	flex-wrap: wrap;
-}
-
-.confirm .mw_wp_form {
-	margin-top: 30px;
-}
-
-.confirm .form_display {
-	display: flex;
-	flex-direction: column;
-	align-items: baseline;
-	width: 400px;
-	margin: 0 auto;
+.contact_confirm .item .label {
+	width: 223px;
 }
 
 .btnWrap {
 	margin-top: 30px;
-	width: 100%;
+}
+
+.contact_confirm .btnWrap {
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
 }
 
-.confirm .btnWrap .fixBtn .btn {
+.contact_confirm .submit {
+	margin-top: 30px;
+}
+
+.contact_confirm .fixBtn .btn {
 	background-color: #fff;
 	color: #666666;
 	border: 1px solid #666666;
 }
-
-.confirm .btn {
-	background-color: #b0c4de;
-	color: #ffffff;
-}
+/* ==========/contact_confirm========== */
 
 /*==========confirm page==========*/
 
 /* ==========contact_complete========== */
-
-.contact_complete .headingTop {
-	text-align: center;
-}
 
 .contact_complete .done {
 	margin-top: 24px;
@@ -579,41 +550,6 @@ textarea {
 /* ==========/contact_complete========== */
 
 /*==========deliverables page==========*/
-
-.deliverables h2.heading {
-	width: 137px;
-}
-
-.deliverables {
-	display: flex;
-	justify-content: center;
-}
-
-.deliverables .summaryWrap {
-	margin-left: 30px;
-}
-
-.deliverables .deliverablesImage {
-	width: 50%;
-}
-
-.deliverables .deliverables > a {
-	display: block;
-}
-
-.deliverables .contentsWrap {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-
-.deliverables .deliverablesImage .image {
-	background: url(../img/nakamura1.jpg) center center / cover no-repeat;
-	padding: calc(150 / 300 * 100%) 20px 0;
-	background-position: center center;
-	background-size: cover;
-}
 
 /*==========deliverables page==========*/
 
@@ -775,6 +711,19 @@ footer p {
 	.works .deliverables {
 		width: calc(50% - 20px);
 	}
+
+	.deliveribles .postWrap {
+		flex-direction: column;
+	}
+
+	.deliveribles .detailsWrap {
+		margin: 30px 0 0;
+	}
+
+	.deliveribles .deliveriblesImg {
+		width: 100%;
+		margin-top: 30px;
+	}
 }
 /*==========/767px以下で適用==========*/
 
@@ -806,6 +755,14 @@ footer p {
 
 	.works .deliverables + .deliverables {
 		margin: 20px 0 0;
+	}
+
+	.btn {
+		width: 70vw;
+	}
+
+	.contact_confirm .item {
+		flex-direction: column;
 	}
 
 	.contact_complete .topPageBtn {

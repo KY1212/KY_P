@@ -10,7 +10,7 @@ get_header('other'); ?>
 	<section class="works sp" id="works">
 		<?php include('common/common-works.php'); ?>
 	</section>
-	<section class="form sp" id="form">
+	<section class="form sp" id="contact">
 		<p><a href="<?php echo get_stylesheet_directory_uri(); ?>/contact">お問い合わせはこちらから</a></p>
 	</section>
 </main>

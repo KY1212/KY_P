@@ -24,14 +24,11 @@ title</a>
 							<span></span>
 						</div>
 						<ul class="list">
-							<?php
-								wp_nav_menu( array(
-									'theme_location' => 'global',
-									'menu_class' => 'list',
-									'depth' => 1
-								));
-							?>
+							<li><a href="#about">About</a></li>
+							<li><a href="#works">Works</a></li>
+							<li><a href="#contact">Contact</a></li>
 						</ul>
+
 					</div>
 				</div>
 			</div>

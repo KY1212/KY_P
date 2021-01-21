@@ -36,15 +36,19 @@ jQuery(function($){
             opacity: "0.5"
           }, duration);
 
+
         //閉じるアクション
         } else if (!($hamburger).hasClass("open")) {
           //SPメニューのアニメーションと色の変更
           $spMenu.animate({
-            opacity: 0
+            opacity: 0,
           }, duration);
           $spMenu.animate({
             top: -700
           }, 0);
+
+
+
           //hamburgerのライン色を変更
           $hamburgerLine.css({
             background: "#333"
@@ -73,26 +77,24 @@ jQuery(function($){
       distance: '50px',
       reset: true
     });
-    ScrollReveal().reveal('.about', {
-      duration: 1000,
-      distance: '150px',
-      scale: 0.1,
-      reset: true
-    });
-    ScrollReveal().reveal('.works', {
-      duration: 1000,
-      distance: '150px',
-      scale: 0.1,
-      reset: true
-    });
-    ScrollReveal().reveal('.form', {
-      duration: 1000,
-      distance: '150px',
-      scale: 0.1,
-      reset: true
-    });
-
-
+    // ScrollReveal().reveal('.about', {
+    //   duration: 1000,
+    //   distance: '150px',
+    //   scale: 0.1,
+    //   reset: true
+    // });
+    // ScrollReveal().reveal('.works', {
+    //   duration: 1000,
+    //   distance: '150px',
+    //   scale: 0.1,
+    //   reset: true
+    // });
+    // ScrollReveal().reveal('.form', {
+    //   duration: 1000,
+    //   distance: '150px',
+    //   scale: 0.1,
+    //   reset: true
+    // });
 
     function delayDisplay() {
       let delayTime = 300;
@@ -107,6 +109,17 @@ jQuery(function($){
       }
     }
     delayDisplay();
+  }
+
+  function hoverAnimate() {
+    const $post = $(".works .postWrap .post");
+    const $image = $(".works .post .image");
+    const $discription = $(".works .post .discription");
+
+    $post.hover(function () {
+      $(this).find(".image").toggleClass("active");
+      $(this).find(".discription").toggleClass("active");
+    });
   }
 
   //ランダムで切り替えるテキストの色の設定
@@ -144,56 +157,22 @@ jQuery(function($){
   }
 
   function scroll() {
-    // let thisOffset;
-    // $(window).on('load', function () {
-    //   thisOffset = $('.form').offset().top + $('.form').outerHeight();
-    // });
-    // $(window).scroll(function () {
-    //   if ($(window).scrollTop() + $(window).height() > thisOffset) {
-    //     $(".form").css({
-    //       display: "block"
-    //     });
-    //   } else {
-    //     // 特定の要素を超えていない
-    //   }
-    // });
-    $(window).on('scroll', function () {
-      var doch = $(document).innerHeight(); //ページ全体の高さ
-      var winh = $(window).innerHeight(); //ウィンドウの高さ
-      var bottom = doch - winh; //ページ全体の高さ - ウィンドウの高さ = ページの最下  部位置
-      if (bottom * 0.7 <= $(window).scrollTop()) {
-        //一番下までスクロールした時に実行
-        // console.log("最底辺！");
-        // $("section .contentsWrap").css({
-        //   display: "block"
-        // });
-      } else{
-
-    }
+      $('a[href^="#"]').click(function(){
+    // 移動先を0px調整する。0を30にすると30px下にずらすことができる。
+    const adjust = 150;
+    // スクロールの速度
+    const speed = 400; // ミリ秒
+    // アンカーの値取得
+    let href= $(this).attr("href");
+    // 移動先を取得
+    let target = $(href == "#" || href == "" ? 'html' : href);
+    // 移動先を調整
+    let position = target.offset().top - adjust;
+    // スムーススクロール
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
   });
-}
-
-  function smooth_scroll() {
-
-    const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
-  for (let i = 0; i < smoothScrollTrigger.length; i++){
-    smoothScrollTrigger[i].addEventListener('click', (e) => {
-      e.preventDefault();
-      let href = smoothScrollTrigger[i].getAttribute('href');
-      let targetElement = document.getElementById(href.replace('#', ''));
-      const rect = targetElement.getBoundingClientRect().top;
-      const offset = window.pageYOffset;
-      const gap = 60;
-      const target = rect + offset - gap;
-      window.scrollTo({
-        top: target,
-        behavior: 'smooth',
-      });
-    });
   }
-  }
-
-
 
   //アニメーションストップ
   function stopAnimate() {
@@ -212,9 +191,9 @@ jQuery(function($){
     titeAnimate();
     setEvent();
     startAnimate();
+    hoverAnimate();
     toggleNav();
     scroll();
-    smooth_scroll();
 
   }
   init();

@@ -15,7 +15,7 @@
           $article_bg = "style='background-image:url(".$article_url.");'";
         ?>
         <div class="image" <?php echo $article_bg; ?>></div>
-        <p class="description">
+        <p class="discription">
           <?php
             if(mb_strlen($post->post_title, 'UTF-8')>46){
               $title= mb_substr($post->post_title, 0, 46, 'UTF-8');

@@ -17,13 +17,11 @@ get_header('other'); ?>
             ?>
           </div>
           <div class="detailsWrap">
-            <p class="postText">
-              <h2 class="title">
-                <?php the_title(); ?>
-              </h2>
-              <p class="comment">
-                <?php the_content(); ?>
-              </div>
+            <h2 class="heading">
+              <?php the_title(); ?>
+            </h2>
+            <p>
+              <?php the_content(); ?>
             </p>
           </div>
           <?php endwhile; endif; ?>

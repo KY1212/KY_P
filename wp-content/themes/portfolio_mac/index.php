@@ -7,13 +7,13 @@ get_header(); ?>
 		<section class="firstView">
 			<?php include('common/common-firstView.php'); ?>
 		</section>
-		<section class="about sp" id="menu-item-22">
+		<section class="about sp" id="about">
 			<?php include('common/common-about.php'); ?>
 		</section>
-		<section class="works sp" id="menu-item-25">
+		<section class="works sp" id="works">
 			<?php include('common/common-works.php'); ?>
 		</section>
-		<section class="form sp" id="menu-item-23">
+		<section class="form sp" id="contact">
 		<p>お問い合わせはこちらから</p>
 		</section>
 	</main>
