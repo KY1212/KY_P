@@ -14,4 +14,6 @@ get_header('other'); ?>
 		<p><a href="<?php echo get_stylesheet_directory_uri(); ?>/contact">お問い合わせはこちらから</a></p>
 	</section>
 </main>
-<?php get_footer(); ?>
+<div class="otherFooterMargin">
+	<?php get_footer(); ?>
+</div>

@@ -8,4 +8,6 @@ get_header('other'); ?>
 		<?php include('common/common-contact.php'); ?>
 	</section>
 </main>
-<?php get_footer(); ?>
+<div class="otherFooterMargin">
+	<?php get_footer(); ?>
+</div>

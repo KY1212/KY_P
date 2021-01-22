@@ -27,6 +27,10 @@ a {
 	color: inherit;
 }
 
+.otherFooterMargin {
+	margin-top: 100px;
+}
+
 main {
 	margin-top: 50px;
 	flex: 1;
@@ -555,7 +559,6 @@ textarea {
 
 /*==========footer page==========*/
 footer {
-	margin-top: 100px;
 	height: 100px;
 	background-color: #eee;
 	color: #333;
@@ -723,6 +726,10 @@ footer p {
 	.deliveribles .deliveriblesImg {
 		width: 100%;
 		margin-top: 30px;
+	}
+
+	footer.index {
+		margin-top: 50px;
 	}
 }
 /*==========/767px以下で適用==========*/

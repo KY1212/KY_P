@@ -36,7 +36,6 @@ jQuery(function($){
             opacity: "0.5"
           }, duration);
 
-
         //閉じるアクション
         } else if (!($hamburger).hasClass("open")) {
           //SPメニューのアニメーションと色の変更
@@ -46,8 +45,6 @@ jQuery(function($){
           $spMenu.animate({
             top: -700
           }, 0);
-
-
 
           //hamburgerのライン色を変更
           $hamburgerLine.css({
