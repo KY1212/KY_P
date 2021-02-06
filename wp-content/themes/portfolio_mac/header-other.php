@@ -39,7 +39,7 @@
 						<ul class="list">
 							<?php if ( is_page('contact') ) : ?>
 							<li><a href="<?php echo get_stylesheet_directory_uri(); ?>/about">HOME</a></li>
-							<li><a href="<?php echo get_stylesheet_directory_uri(); ?>/contact">CONTACT</a></li>
+
 							<?php elseif ( is_page(!('contact')) ) : ?>
 							<li><a href="#about">About</a></li>
 							<li><a href="#works">Works</a></li>

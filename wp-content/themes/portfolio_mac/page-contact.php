@@ -3,11 +3,9 @@
 Template Name: contact
 */
 get_header('other'); ?>
-<main>
+<main class="contact">
 	<section class="form target" id="form">
 		<?php include('common/common-contact.php'); ?>
 	</section>
 </main>
-<div class="otherFooterMargin">
-	<?php get_footer(); ?>
-</div>
+<?php get_footer(); ?>

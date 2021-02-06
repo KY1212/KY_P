@@ -27,12 +27,8 @@ a {
 	color: inherit;
 }
 
-.otherFooterMargin {
-	margin-top: 100px;
-}
-
 main {
-	margin-top: 50px;
+	margin-top: 100px;
 	flex: 1;
 }
 
@@ -40,8 +36,9 @@ main.index {
 	margin-top: 0;
 }
 
-header.index {
-	margin: 0;
+main.contact {
+	margin-top: 100px;
+	bottom: 0;
 }
 
 section h2 > span {
@@ -56,12 +53,18 @@ img {
 }
 
 .btn {
-	border-radius: 9999px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 9999px;
 	font-size: 20px;
-	color: #fff;
+	margin: auto;
+	width: 400px;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	background-color: #b0c4de;
+	color: #ffffff;
 }
 
 .btn:hover {
@@ -109,6 +112,8 @@ h2.heading span {
 	opacity: 0.26;
 	line-height: 1;
 }
+/*==========./global==========*/
+
 /*==========header==========*/
 header {
 	background-color: #eeeeee;
@@ -149,34 +154,45 @@ header .pc ul > li {
 }
 
 header .sp .list {
+	display: flex;
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
 	font-size: 30px;
-	display: none;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	left: 0px;
-	opacity: 0;
-	top: 0;
+	top: 0px;
 	color: #fff;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.3s;
+}
+
+header .sp .list.open {
+	opacity: 1;
+	visibility: visible;
+	background: rgba(108, 108, 108, 0.9);
+	transition: 0.3s;
 }
 
 header .sp li {
 	display: flex;
 	justify-content: center;
 }
-/*==========firstView==========*/
-.firstView.sp {
-	display: none;
-}
+/*==========./header==========*/
 
+/*==========firstView==========*/
 .firstView {
 	display: flex;
 	position: relative;
 	height: 100vh;
 	width: 100%;
+}
+
+.firstView.sp {
+	display: none;
 }
 
 .firstView .contentsWrap {
@@ -314,21 +330,19 @@ header .sp li {
 .about .skillName {
 	text-align: center;
 }
-/*==========about page==========*/
+/*==========./about page==========*/
 
 /*==========works page==========*/
 .works .postWrap {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	word-break: break-all;
 	margin: 60px auto 0;
 }
 
 .works .postWrap .post {
-	width: calc(45% - 15px);
+	width: calc(40% - 15px);
 	position: relative;
-	z-index: 1;
 }
 
 .works .post > a {
@@ -340,7 +354,6 @@ header .sp li {
 	padding: calc(172 / 305 * 100%) 20px 0;
 	background-position: center center;
 	background-size: cover;
-	font-size: 18px;
 	box-shadow: 4px 4px 4px gray;
 	transition-duration: 0.3s;
 }
@@ -350,18 +363,10 @@ header .sp li {
 	position: absolute;
 	bottom: 0;
 	padding: 20px;
-	font-size: 20px;
+	font-size: 24px;
 	width: 100%;
 	background: linear-gradient(to bottom, transparent, #333 86%, #333);
 	transition-duration: 0.3s;
-}
-
-.works .post .image.active {
-	box-shadow: 0 0;
-}
-
-.works .post .discription.active {
-	padding: 50px 20px;
 }
 
 .works .post:nth-child(n + 3) {
@@ -372,21 +377,14 @@ header .sp li {
 	margin-left: 30px;
 }
 
-@media (max-width: 425px) {
-	.works .postWrap {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.works .postWrap .post {
-		width: 100%;
-	}
-
-	.works .post + .post {
-		margin: 30px 0 0;
-	}
+.works .post .image.active {
+	box-shadow: 0 0;
 }
-/*==========works page==========*/
+
+.works .post .discription.active {
+	padding: 50px 20px;
+}
+/*==========./works page==========*/
 
 /*==========deliveribles page==========*/
 .deliveribles .postWrap {
@@ -402,6 +400,8 @@ header .sp li {
 	display: flex;
 	flex-direction: column;
 	margin-left: 100px;
+	width: 100%;
+	max-width: 500px;
 }
 
 .deliveribles .postWrap h2.heading {
@@ -413,8 +413,7 @@ header .sp li {
 .deliveribles .deliveriblesImg {
 	width: 400px;
 }
-
-/*==========deliveribles page==========*/
+/*==========./deliveribles page==========*/
 
 /*==========form page==========*/
 .form .contents {
@@ -461,23 +460,13 @@ textarea {
 	border-radius: 2px;
 }
 
-.btn {
-	border: 0;
-	cursor: pointer;
-	background-color: #b0c4de;
-	color: #ffffff;
-	margin: auto;
-	width: 400px;
-}
+/*==========./form page==========*/
 
-/*==========form page==========*/
-
-/*==========confirm==========*/
+/*==========confirm page==========*/
 .contact_confirm {
 	max-width: 640px;
-	margin: 60px auto 0;
+	margin: auto;
 	width: 96%;
-	flex: 1;
 }
 
 .contact_confirm h2.heading {
@@ -507,6 +496,10 @@ textarea {
 	padding: 20px 0;
 }
 
+.contact_confirm .item:nth-child(n + 3) {
+	flex-direction: column;
+}
+
 .contact_confirm .item .label {
 	width: 223px;
 }
@@ -530,11 +523,9 @@ textarea {
 	color: #666666;
 	border: 1px solid #666666;
 }
-/* ==========/contact_confirm========== */
+/* ==========./confirm page========== */
 
-/*==========confirm page==========*/
-
-/* ==========contact_complete========== */
+/* ==========complete page========== */
 
 .contact_complete .done {
 	margin-top: 24px;
@@ -551,11 +542,7 @@ textarea {
 	border: 1px solid #666666;
 	margin: auto;
 }
-/* ==========/contact_complete========== */
-
-/*==========deliverables page==========*/
-
-/*==========deliverables page==========*/
+/*==========./complete page==========*/
 
 /*==========footer page==========*/
 footer {
@@ -565,6 +552,10 @@ footer {
 	text-align: center;
 	display: flex;
 	align-items: center;
+}
+
+.contact + footer {
+	margin-top: 100px;
 }
 
 footer .inner {
@@ -589,7 +580,9 @@ footer p {
 		display: block;
 	}
 }
-/*==========/767px以上適用==========*/
+/*==========./767px以上適用==========*/
+
+/*==========426pxpx以上、1024px以下適用==========*/
 
 @media (max-width: 1024px) and (min-width: 426px) {
 	.wrap .postWrap {
@@ -597,14 +590,15 @@ footer p {
 		margin: 30px auto 0;
 	}
 }
+/*==========426pxpx以上、1024px以下適用==========*/
 
-/*==========1024px以下で適用==========*/
+/*==========767px以上、1024px以下で適用==========*/
 @media (max-width: 1024px) and (min-width: 767px) {
 	section + section {
 		margin-top: 30px;
 	}
 }
-/*==========/1024px以下で適用==========*/
+/*==========767px以上、1024px以下で適用==========*/
 
 /*==========767px以下で適用==========*/
 @media (max-width: 767px) {
@@ -612,20 +606,25 @@ footer p {
 		display: none;
 	}
 
-	.about.target {
+	.sp {
 		display: block;
 	}
 
-	.sp {
+	main {
+		margin-top: 0;
+		position: relative;
+		bottom: 50px;
+	}
+
+	.about.target {
 		display: block;
 	}
 
 	.firstView.sp {
 		display: flex;
-		bottom: 200px;
 	}
 
-	section:nth-child(n + 2) {
+	section:nth-child(n + 3) {
 		margin-top: 100px;
 	}
 
@@ -652,7 +651,11 @@ footer p {
 		height: 4px;
 		background-color: #333;
 		display: inline-block;
-		transition: all 0.5s;
+		transition: all 0.3s;
+	}
+
+	header .hamburger span.open {
+		background-color: #fff;
 	}
 
 	header .hamburger span:nth-of-type(1) {
@@ -688,10 +691,6 @@ footer p {
 		margin-top: 30px;
 	}
 
-	.firstView {
-		bottom: 100px;
-	}
-
 	.firstView .menu {
 		display: none;
 	}
@@ -715,6 +714,19 @@ footer p {
 		width: calc(50% - 20px);
 	}
 
+	.works .postWrap {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.works .postWrap .post {
+		width: 100%;
+	}
+
+	.works .post + .post {
+		margin: 30px 0 0;
+	}
+
 	.deliveribles .postWrap {
 		flex-direction: column;
 	}
@@ -725,37 +737,32 @@ footer p {
 
 	.deliveribles .deliveriblesImg {
 		width: 100%;
-		margin-top: 30px;
 	}
 
-	footer.index {
+	footer {
 		margin-top: 50px;
 	}
 }
-/*==========/767px以下で適用==========*/
+/*==========./767px以下で適用==========*/
 
-/*==========425px以下で適用==========*/
+/*==========520px以下で適用==========*/
 @media (max-width: 520px) {
-	.about .skill:nth-child(2n) {
-		margin-left: 20px;
+	.about .skillWrap {
+		flex-direction: column;
+		align-items: center;
 	}
 
-	.about .skill:nth-child(n + 3) {
-		margin-top: 20px;
+	.about .skill {
+		margin: 0;
 	}
-
 	.about .skillImage {
-		width: 140px;
+		width: 150px;
 	}
 }
-/*==========425px以下で適用==========*/
+/*==========./520px以下で適用==========*/
 
 /*==========425px以下で適用==========*/
 @media (max-width: 425px) {
-	.about .skillImage {
-		width: 100px;
-	}
-
 	.works .deliverables {
 		width: 100%;
 	}
@@ -776,4 +783,4 @@ footer p {
 		margin: 30px auto 0;
 	}
 }
-/*==========/425px以下で適用==========*/
+/*==========./425px以下で適用==========*/

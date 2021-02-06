@@ -3,6 +3,7 @@
 Template Name: confirm
 */
 get_header('other'); ?>
+<main class="contact">
   <div class="contact_confirm">
     <h2 class="heading">Contact<span>Contact</span></h2>
     <p class="text">
@@ -12,5 +13,5 @@ get_header('other'); ?>
       <?php echo do_shortcode( '[mwform_formkey key="27"]' ); ?>
     </div>
   </div>
-</div>
-<?php	get_footer(); ?>
+</main>
+<?php get_footer(); ?>

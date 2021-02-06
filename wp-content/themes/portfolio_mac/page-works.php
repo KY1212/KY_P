@@ -4,6 +4,9 @@ Template Name: works
 */
 get_header('other'); ?>
 <main>
+	<section class="firstView sp">
+		<?php include('common/common-firstView.php'); ?>
+	</section>
 	<section class="about sp" id="about">
 		<?php include('common/common-about.php'); ?>
 	</section>
@@ -14,6 +17,4 @@ get_header('other'); ?>
 		<p><a href="<?php echo get_stylesheet_directory_uri(); ?>/contact">お問い合わせはこちらから</a></p>
 	</section>
 </main>
-<div class="otherFooterMargin">
-	<?php get_footer(); ?>
-</div>
+<?php get_footer(); ?>

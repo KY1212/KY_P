@@ -18,42 +18,12 @@ jQuery(function($){
         //開くアクション
         if($hamburger.hasClass("open")) {
           //SPメニューのアニメーションと色の変更
-          $spMenu.animate({
-            top: 0
-          }, 0);
-          $spMenu.animate({
-            opacity: 1
-          }, duration).css({
-            background: "rgba(108, 108, 108, 0.9)",
-            display: "flex"
-          }, duration);
-          //hamburgerのライン色を変更
-          $hamburgerLine.css({
-            background: "#fff"
-          },duration);
-          //メインコンテンツを若干透過させる
-          $("section, footer").css({
-            opacity: "0.5"
-          }, duration);
-
+          $spMenu.addClass("open");
+          $hamburgerLine.addClass("open");
         //閉じるアクション
         } else if (!($hamburger).hasClass("open")) {
-          //SPメニューのアニメーションと色の変更
-          $spMenu.animate({
-            opacity: 0,
-          }, duration);
-          $spMenu.animate({
-            top: -700
-          }, 0);
-
-          //hamburgerのライン色を変更
-          $hamburgerLine.css({
-            background: "#333"
-          }, duration);
-          //メインコンテンツの透過を解除
-          $("section,footer").css({
-            opacity: "1"
-          }, duration);
+          $spMenu.removeClass("open");
+          $hamburgerLine.removeClass("open");
         }
       }
       $hamburger.on("click", toggleAction);
@@ -110,8 +80,6 @@ jQuery(function($){
 
   function hoverAnimate() {
     const $post = $(".works .postWrap .post");
-    const $image = $(".works .post .image");
-    const $discription = $(".works .post .discription");
 
     $post.hover(function () {
       $(this).find(".image").toggleClass("active");
@@ -173,7 +141,9 @@ jQuery(function($){
 
   //アニメーションストップ
   function stopAnimate() {
-    clearInterval(menuAnimate);
+    $(this).hover(function () {
+      clearInterval(menuAnimate);
+    });
   }
 
   //マウスイベント
